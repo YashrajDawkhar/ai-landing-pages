@@ -4,9 +4,9 @@ A portfolio of landing pages built with AI tools, demonstrating the potential of
 
 ## ✨ Featured Projects
 
--   **🏢 Startup MVP Landing Page** - Minimalist design built with Framer AI
--   **🏥 Healthcare Provider Portal** - Professional portal created with Durable + ChatGPT
--   **💉 Healthcare Service Landing** - Service-focused page developed with 10Web AI Builder
+-   **🏢 Startup MVP Landing Page** - Minimalist design built with cursor Ai
+-   **🏥 Healthcare Provider Portal** - Professional portal created with cursor Ai
+-   **💉 Healthcare Service Landing** - Service-focused page developed with cursor AI
 
 ## 🛠️ Tech Stack
 
