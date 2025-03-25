@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Name - Your Solution Tagline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            200: '#f5d0fe',
+                            300: '#f0abfc',
+                            400: '#e879f9',
+                            500: '#d946ef',
+                            600: '#c026d3',
+                            700: '#a21caf',
+                            800: '#86198f',
+                            900: '#701a75',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #0ea5e9 0%, #a21caf 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            box-shadow: 0 10px 20px -10px rgba(14, 165, 233, 0.5);
+            transform: translateY(-2px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        .section-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .section-divider svg {
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 56px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gradient-to-br from-slate-50 to-blue-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass shadow-sm py-4">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="text-xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 text-transparent bg-clip-text">ProductName</div>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-primary-600 transition-colors">Features</a>
+                <a href="#benefits" class="text-gray-600 hover:text-primary-600 transition-colors">Benefits</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-primary-600 transition-colors">Testimonials</a>
+                <a href="#faq" class="text-gray-600 hover:text-primary-600 transition-colors">FAQ</a>
+            </div>
+            
+            <!-- CTA Button -->
+            <a href="#signup" class="hidden md:block btn-gradient text-white font-medium px-5 py-2 rounded-full text-sm shadow-lg">
+                Get Early Access
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-500 focus:outline-none" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden glass shadow-lg rounded-b-2xl mx-4 mt-4" id="mobile-menu">
+            <div class="px-4 py-5 space-y-4">
+                <a href="#features" class="block text-gray-600 hover:text-primary-600 transition-colors">Features</a>
+                <a href="#benefits" class="block text-gray-600 hover:text-primary-600 transition-colors">Benefits</a>
+                <a href="#testimonials" class="block text-gray-600 hover:text-primary-600 transition-colors">Testimonials</a>
+                <a href="#faq" class="block text-gray-600 hover:text-primary-600 transition-colors">FAQ</a>
+                <a href="#signup" class="block btn-gradient text-white font-medium px-5 py-2 rounded-full text-center shadow-lg">
+                    Get Early Access
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero Section -->
+    <section class="pt-32 pb-24 md:pt-40 md:pb-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-secondary-500/10 -z-10"></div>
+        
+        <!-- Background Elements -->
+        <div class="absolute top-1/4 right-0 w-64 h-64 bg-secondary-400/20 rounded-full filter blur-3xl -z-10"></div>
+        <div class="absolute bottom-1/3 left-0 w-80 h-80 bg-primary-400/20 rounded-full filter blur-3xl -z-10"></div>
+        
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 animate-fadeIn" style="animation-delay: 0.1s;">
+                    <div class="inline-block px-3 py-1 text-xs font-medium text-primary-700 bg-primary-100 rounded-full mb-6">
+                        Now in Beta • Limited Spots Available
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-primary-700 to-secondary-700 text-transparent bg-clip-text">
+                        Transform Your Workflow with Powerful Automation
+                    </h1>
+                    <h2 class="text-xl text-gray-600 mb-8 md:pr-10">
+                        Save hours every week with our AI-powered tool designed specifically for busy professionals.
+                    </h2>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#signup" class="btn-gradient text-white font-medium px-8 py-4 rounded-full text-center shadow-lg hover:shadow-xl transition-all relative overflow-hidden group">
+                            <span class="relative z-10">Get Early Access</span>
+                            <span class="absolute inset-0 h-full w-0 bg-white/20 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#how-it-works" class="glass text-primary-700 font-medium px-8 py-4 rounded-full text-center border border-primary-200 transition-all hover:-translate-y-1 hover:shadow-md">
+                            <i class="fas fa-play-circle mr-2"></i> See How It Works
+                        </a>
+                    </div>
+                    <p class="mt-6 text-gray-500 text-sm flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg> 
+                        No credit card required 
+                        <span class="mx-2">•</span> 
+                        <svg class="w-5 h-5 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg> 
+                        Join 500+ early adopters
+                    </p>
+                </div>
+                <div class="md:w-1/2 animate-fadeIn" style="animation-delay: 0.3s;">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl blur-xl opacity-50 animate-pulse-slow"></div>
+                        <div class="relative bg-white rounded-xl shadow-xl overflow-hidden p-2">
+                            <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Product Demo" class="rounded-lg w-full animate-float">
+                            <div class="absolute bottom-8 right-8">
+                                <button class="bg-white/90 hover:bg-white p-4 rounded-full shadow-lg transition-all hover:scale-110">
+                                    <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mt-8 space-x-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-600">97%</div>
+                            <div class="text-sm text-gray-500">Time Saved</div>
+                        </div>
+                        <div class="h-12 w-px bg-gray-200"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-600">24/7</div>
+                            <div class="text-sm text-gray-500">Automation</div>
+                        </div>
+                        <div class="h-12 w-px bg-gray-200"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-600">500+</div>
+                            <div class="text-sm text-gray-500">Happy Users</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wave Divider -->
+        <div class="section-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="#ffffff">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Section 2: Problem & Solution Introduction -->
+    <section class="py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 max-w-5xl">
+            <div class="grid md:grid-cols-5 gap-12">
+                <div class="md:col-span-2">
+                    <div class="sticky top-24">
+                        <div class="inline-block px-3 py-1 text-xs font-medium text-secondary-700 bg-secondary-100 rounded-full mb-6">
+                            The Problem
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-700 to-gray-900 text-transparent bg-clip-text">
+                            Tired of wasting hours on repetitive tasks?
+                        </h2>
+                        <p class="text-xl text-gray-600">
+                            Every day, professionals lose valuable time to manual processes that could be automated.
+                        </p>
+                        <div class="mt-8 space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-red-100 flex items-center justify-center text-red-500 mr-3 mt-1">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <p>Missed deadlines due to repetitive tasks</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-red-100 flex items-center justify-center text-red-500 mr-3 mt-1">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <p>Increased stress from manual workflows</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-red-100 flex items-center justify-center text-red-500 mr-3 mt-1">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <p>Limited time for creative and high-value work</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-3">
+                    <div class="bg-gradient-to-br from-primary-50 to-secondary-50 p-10 rounded-3xl shadow-lg border border-gray-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-full -m-20 opacity-80"></div>
+                        
+                        <div class="relative">
+                            <div class="inline-block px-3 py-1 text-xs font-medium text-primary-700 bg-primary-100 rounded-full mb-6">
+                                The Solution
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-semibold mb-6">
+                                That's why we built <span class="bg-gradient-to-r from-primary-600 to-secondary-600 text-transparent bg-clip-text">ProductName</span>
+                            </h3>
+                            <p class="text-lg mb-8">
+                                Our platform seamlessly integrates with your existing tools to identify and automate 
+                                repetitive workflows, giving you back hours in your week to focus on what truly matters.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-6 mb-8">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-3">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Smart Detection</h4>
+                                        <p class="text-sm text-gray-500">Automatically finds repetitive tasks</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-3">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">One-Click Setup</h4>
+                                        <p class="text-sm text-gray-500">Easy activation with no coding</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-3">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Advanced AI</h4>
+                                        <p class="text-sm text-gray-500">Learns and improves over time</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-3">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Secure Integration</h4>
+                                        <p class="text-sm text-gray-500">Works with your existing tools</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="#how-it-works" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">
+                                Learn how it works
+                                <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: How It Works / Key MVP Features -->
+    <section id="how-it-works" class="py-20 bg-gradient-to-b from-white to-gray-50 relative">
+        <div class="absolute inset-0 bg-grid-gray-100 bg-fixed opacity-30"></div>
+        
+        <div class="container mx-auto px-4 md:px-6 relative">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block px-3 py-1 text-xs font-medium text-primary-700 bg-primary-100 rounded-full mb-4">
+                    Simple Process
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">How It Works</h2>
+                <p class="text-xl text-gray-600">
+                    Our intelligent platform makes automation accessible to everyone, 
+                    no technical expertise required.
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Connection Lines (Desktop Only) -->
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0"></div>
+                
+                <div class="grid md:grid-cols-3 gap-8 lg:gap-12 relative z-10">
+                    <div class="group">
+                        <div class="bg-white rounded-2xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col">
+                            <div class="mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-2 shadow-lg mx-auto lg:mx-0 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-plug"></i>
+                                </div>
+                                <div class="lg:hidden h-px w-12 bg-gray-200 mx-auto my-6"></div>
+                                <div class="lg:flex items-center mb-4 hidden">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-500 text-white font-bold flex items-center justify-center shadow-md">
+                                        1
+                                    </div>
+                                    <div class="h-px w-full bg-gray-200 ml-4"></div>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2 text-center lg:text-left">Connect Your Tools</h3>
+                            </div>
+                            <p class="text-gray-600 mb-6 text-center lg:text-left">
+                                Securely connect your productivity apps with our one-click integration system. 
+                                We support all major platforms including Google Workspace, Microsoft Office, Slack, and Asana.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-inner">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                                        alt="Connect Your Tools" 
+                                        class="w-full transition-transform group-hover:scale-105"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group">
+                        <div class="bg-white rounded-2xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col">
+                            <div class="mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-2 shadow-lg mx-auto lg:mx-0 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="lg:hidden h-px w-12 bg-gray-200 mx-auto my-6"></div>
+                                <div class="lg:flex items-center mb-4 hidden">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 text-white font-bold flex items-center justify-center shadow-md">
+                                        2
+                                    </div>
+                                    <div class="h-px w-full bg-gray-200 ml-4"></div>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2 text-center lg:text-left">Identify Automation</h3>
+                            </div>
+                            <p class="text-gray-600 mb-6 text-center lg:text-left">
+                                Our AI analyzes your workflow patterns and identifies tasks that can be automated, 
+                                showing you potential time savings and providing recommendations tailored to your specific needs.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-inner">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                                        alt="Identify Automation" 
+                                        class="w-full transition-transform group-hover:scale-105"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group">
+                        <div class="bg-white rounded-2xl shadow-xl p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col">
+                            <div class="mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-secondary-400 to-secondary-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-2 shadow-lg mx-auto lg:mx-0 group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                                <div class="lg:hidden h-px w-12 bg-gray-200 mx-auto my-6"></div>
+                                <div class="lg:flex items-center mb-4 hidden">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary-500 text-white font-bold flex items-center justify-center shadow-md">
+                                        3
+                                    </div>
+                                    <div class="h-px w-full bg-transparent ml-4"></div>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2 text-center lg:text-left">Activate & Enjoy</h3>
+                            </div>
+                            <p class="text-gray-600 mb-6 text-center lg:text-left">
+                                With one click, enable the automations you want. Sit back and watch as hours of manual work 
+                                get handled automatically while you focus on more important things.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-inner">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                                        alt="Activate & Enjoy" 
+                                        class="w-full transition-transform group-hover:scale-105"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Benefits Over Features -->
+    <section id="benefits" class="py-20 bg-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-100 rounded-full opacity-70 blur-3xl"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary-100 rounded-full opacity-70 blur-3xl"></div>
+        
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block px-3 py-1 text-xs font-medium text-secondary-700 bg-secondary-100 rounded-full mb-4">
+                    Results That Matter
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Benefits You'll Experience</h2>
+                <p class="text-xl text-gray-600">
+                    Our users see transformative results within the first week.
+                    Here's what you can expect:
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl flex items-center justify-center text-primary-500 text-2xl mb-6">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Save 5+ Hours Every Week</h3>
+                    <div class="w-12 h-1 bg-primary-500 rounded-full mb-4"></div>
+                    <p class="text-gray-600">
+                        Our average user reclaims over 5 hours weekly by eliminating repetitive tasks that 
+                        used to consume their valuable time.
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="flex items-center">
+                            <div class="relative w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary-500 h-2 rounded-full" style="width: 83%"></div>
+                            </div>
+                            <span class="ml-3 text-sm font-semibold text-gray-700">83%</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">of users report saving 5+ hours weekly</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center text-blue-500 text-2xl mb-6">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Boost Productivity by 30%</h3>
+                    <div class="w-12 h-1 bg-blue-500 rounded-full mb-4"></div>
+                    <p class="text-gray-600">
+                        Focus on high-impact work while our system handles the routine. Users report 
+                        an average 30% increase in meaningful output.
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="flex items-center">
+                            <div class="relative w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 91%"></div>
+                            </div>
+                            <span class="ml-3 text-sm font-semibold text-gray-700">91%</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">of users report increased productivity</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl flex items-center justify-center text-green-500 text-2xl mb-6">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Eliminate Human Error</h3>
+                    <div class="w-12 h-1 bg-green-500 rounded-full mb-4"></div>
+                    <p class="text-gray-600">
+                        Automated processes run with precision every time, eliminating the mistakes 
+                        that come from manual data entry and repetitive tasks.
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="flex items-center">
+                            <div class="relative w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 78%"></div>
+                            </div>
+                            <span class="ml-3 text-sm font-semibold text-gray-700">78%</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">reduction in errors reported by users</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl flex items-center justify-center text-indigo-500 text-2xl mb-6">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Reduce Mental Load</h3>
+                    <div class="w-12 h-1 bg-indigo-500 rounded-full mb-4"></div>
+                    <p class="text-gray-600">
+                        Stop worrying about remembering routine tasks. Our system keeps track 
+                        so you can focus your mental energy on creative solutions.
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="flex items-center">
+                            <div class="relative w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 89%"></div>
+                            </div>
+                            <span class="ml-3 text-sm font-semibold text-gray-700">89%</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">of users report reduced stress levels</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Social Proof / Trust Builders -->
+    <section id="testimonials" class="py-20 bg-gradient-to-b from-gray-50 to-white relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block px-3 py-1 text-xs font-medium text-primary-700 bg-primary-100 rounded-full mb-4">
+                    Don't Just Take Our Word For It
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Trusted by Forward-Thinking Professionals</h2>
+                <p class="text-xl text-gray-600">
+                    Join our growing community of productivity enthusiasts who are transforming their workflows.
+                </p>
+            </div>
+
+            <!-- Testimonials Slider -->
+            <div class="mx-auto max-w-6xl px-6 lg:px-12">
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl relative">
+                        <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="text-yellow-400 mb-6 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="h-48 overflow-auto mb-6">
+                            <p class="text-gray-600 italic mb-4">
+                                "This tool has completely transformed my workday. I've reclaimed at least 7 hours a week 
+                                that I now spend on strategic planning instead of data entry. The automation suggestions 
+                                were spot on for my workflow and the setup was incredibly easy."
+                            </p>
+                        </div>
+                        <div class="flex items-center pt-4 border-t border-gray-100">
+                            <div class="relative w-12 h-12 mr-4">
+                                <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full blur opacity-50"></div>
+                                <img src="https://placehold.co/100x100/fff/4f46e5?text=JD" alt="User" class="relative rounded-full w-12 h-12">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Jamie Doe</h4>
+                                <p class="text-gray-500 text-sm">Marketing Director</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-xl relative">
+                        <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="text-yellow-400 mb-6 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="h-48 overflow-auto mb-6">
+                            <p class="text-gray-600 italic mb-4">
+                                "I was skeptical at first, but after seeing how much time I saved in the first week, 
+                                I was sold. The setup was surprisingly easy too. Now my team relies on this for all our 
+                                routine processes, and we've been able to take on 20% more clients without adding staff."
+                            </p>
+                        </div>
+                        <div class="flex items-center pt-4 border-t border-gray-100">
+                            <div class="relative w-12 h-12 mr-4">
+                                <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full blur opacity-50"></div>
+                                <img src="https://placehold.co/100x100/fff/0ea5e9?text=AS" alt="User" class="relative rounded-full w-12 h-12">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Alex Smith</h4>
+                                <p class="text-gray-500 text-sm">Small Business Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-xl relative">
+                        <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-2">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="text-yellow-400 mb-6 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="h-48 overflow-auto mb-6">
+                            <p class="text-gray-600 italic mb-4">
+                                "The insights from the automation analysis alone were worth it. I discovered inefficiencies 
+                                in our processes I hadn't even realized were there. After implementing the suggested automations, 
+                                our team has been able to focus much more on strategic initiatives rather than chasing details."
+                            </p>
+                        </div>
+                        <div class="flex items-center pt-4 border-t border-gray-100">
+                            <div class="relative w-12 h-12 mr-4">
+                                <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full blur opacity-50"></div>
+                                <img src="https://placehold.co/100x100/fff/a21caf?text=TP" alt="User" class="relative rounded-full w-12 h-12">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Taylor Park</h4>
+                                <p class="text-gray-500 text-sm">Operations Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured In -->
+            <div class="py-10 border-t border-b border-gray-200">
+                <p class="text-lg font-medium mb-8 text-center text-gray-500">As featured in</p>
+                <div class="flex flex-wrap justify-center gap-10 lg:gap-16 items-center">
+                    <img src="https://placehold.co/180x60/f3f4f6/64748b?text=TechCrunch" alt="TechCrunch" class="h-10 opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/180x60/f3f4f6/64748b?text=Forbes" alt="Forbes" class="h-10 opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/180x60/f3f4f6/64748b?text=ProductHunt" alt="ProductHunt" class="h-10 opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/180x60/f3f4f6/64748b?text=FastCompany" alt="FastCompany" class="h-10 opacity-70 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+
+            <!-- Founder Story -->
+            <div class="mt-16 max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-gray-50 to-white p-10 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary-100 rounded-full -mr-32 -mt-32 opacity-50"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-100 rounded-full -ml-32 -mb-32 opacity-50"></div>
+                    
+                    <div class="relative flex flex-col md:flex-row items-center gap-8">
+                        <div class="relative w-32 h-32 flex-shrink-0">
+                            <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full blur-sm opacity-70"></div>
+                            <img src="https://placehold.co/300x300/f3f4f6/0c4a6e?text=Founder" alt="Founder" class="relative w-32 h-32 rounded-full object-cover border-4 border-white">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-transparent bg-clip-text">Why We Built This</h3>
+                            <p class="text-gray-600 mb-6 italic">
+                                "After spending years watching talented colleagues waste countless hours on tasks that 
+                                could be automated, I became determined to create a solution that would give people 
+                                back their time. Our mission is to eliminate busywork and let people focus on what 
+                                they do best."
+                            </p>
+                            <div class="flex items-center">
+                                <p class="font-medium">
+                                    Sam Johnson
+                                </p>
+                                <span class="mx-2 text-gray-300">|</span>
+                                <p class="text-gray-500">
+                                    Founder & CEO
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Final CTA -->
+    <section id="signup" class="py-20 bg-gradient-to-br from-primary-600 to-secondary-700 text-white relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full -mt-24 -mr-24"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-white opacity-5 rounded-full -mb-24 -ml-24"></div>
+        
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Reclaim Your Time?</h2>
+                <p class="text-xl md:text-2xl mb-10 text-primary-100">
+                    Join our limited beta today and be among the first to transform your workflow.
+                </p>
+                
+                <div class="bg-white/10 backdrop-blur-lg p-8 md:p-10 rounded-3xl shadow-2xl mb-8 max-w-xl mx-auto">
+                    <form class="space-y-4">
+                        <div>
+                            <label for="email" class="block text-left mb-2 text-sm font-medium">Your work email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                placeholder="name@company.com" 
+                                class="w-full px-4 py-3 rounded-lg text-gray-800 bg-white/90 backdrop-blur border border-white/20 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-transparent"
+                            >
+                        </div>
+                        <div>
+                            <label for="name" class="block text-left mb-2 text-sm font-medium">Your name</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                placeholder="John Smith" 
+                                class="w-full px-4 py-3 rounded-lg text-gray-800 bg-white/90 backdrop-blur border border-white/20 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-transparent"
+                            >
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="w-full bg-white text-primary-600 hover:text-primary-700 font-medium px-6 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all relative overflow-hidden group mt-4"
+                        >
+                            <span class="relative z-10">Get Early Access</span>
+                            <span class="absolute inset-0 h-full w-0 bg-primary-50 transition-all duration-300 group-hover:w-full"></span>
+                        </button>
+                    </form>
+                    <p class="text-primary-200 text-sm mt-4">Free access during beta • Limited spots available</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-10">
+                    <div class="flex items-center">
+                        <div class="bg-white/20 backdrop-blur-sm p-3 rounded-full mr-4">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <p>Free 14-day trial</p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-white/20 backdrop-blur-sm p-3 rounded-full mr-4">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                            </svg>
+                        </div>
+                        <p>1-on-1 onboarding</p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-white/20 backdrop-blur-sm p-3 rounded-full mr-4">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <p>Priority support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: FAQ -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <div class="inline-block px-3 py-1 text-xs font-medium text-primary-700 bg-primary-100 rounded-full mb-4">
+                    Questions & Answers
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">
+                    Everything you need to know about the product and billing.
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-gray-50 rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md" x-data="{ open: false }">
+                    <button class="flex justify-between items-center w-full text-left p-6" onclick="this.parentNode.classList.toggle('active')">
+                        <h3 class="text-xl font-semibold">What exactly can the product do right now?</h3>
+                        <div class="faq-icon">
+                            <svg class="w-6 h-6 text-primary-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-600">
+                            <p>Our current version can connect to Google Workspace, Microsoft Office, Slack, and Asana. 
+                               It identifies repetitive tasks like data entry, report generation, and notification management, 
+                               then creates automation rules that you can activate with one click.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md" x-data="{ open: false }">
+                    <button class="flex justify-between items-center w-full text-left p-6" onclick="this.parentNode.classList.toggle('active')">
+                        <h3 class="text-xl font-semibold">Who is this product for?</h3>
+                        <div class="faq-icon">
+                            <svg class="w-6 h-6 text-primary-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-600">
+                            <p>Our solution is ideal for knowledge workers, team managers, small business owners, 
+                               and anyone who spends significant time on repetitive digital tasks. If you find yourself 
+                               doing the same processes over and over, our tool is designed for you.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md" x-data="{ open: false }">
+                    <button class="flex justify-between items-center w-full text-left p-6" onclick="this.parentNode.classList.toggle('active')">
+                        <h3 class="text-xl font-semibold">Is it free? What will pricing be like later?</h3>
+                        <div class="faq-icon">
+                            <svg class="w-6 h-6 text-primary-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-600">
+                            <p>The beta version is completely free for all early adopters. After launch, we plan to 
+                               offer a freemium model with basic automation features available at no cost, and advanced 
+                               features starting at $29/month. As a beta user, you'll receive a 50% lifetime discount 
+                               when we launch paid plans.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md" x-data="{ open: false }">
+                    <button class="flex justify-between items-center w-full text-left p-6" onclick="this.parentNode.classList.toggle('active')">
+                        <h3 class="text-xl font-semibold">How is my data handled?</h3>
+                        <div class="faq-icon">
+                            <svg class="w-6 h-6 text-primary-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-600">
+                            <p>We take data security seriously. We use OAuth for authentication without storing your 
+                               passwords. All data is encrypted both in transit and at rest. We only access the minimum 
+                               permissions needed to automate your tasks, and you can revoke access at any time.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md" x-data="{ open: false }">
+                    <button class="flex justify-between items-center w-full text-left p-6" onclick="this.parentNode.classList.toggle('active')">
+                        <h3 class="text-xl font-semibold">What happens after I sign up?</h3>
+                        <div class="faq-icon">
+                            <svg class="w-6 h-6 text-primary-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-600">
+                            <p>You'll receive an email confirmation with a link to create your account. Once signed in, 
+                               our onboarding wizard will guide you through connecting your first apps and identifying 
+                               automation opportunities. Our team will also reach out to offer a free 15-minute consultation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl overflow-hidden transition-all duration-200 hover:shadow-md" x-data="{ open: false }">
+                    <button class="flex justify-between items-center w-full text-left p-6" onclick="this.parentNode.classList.toggle('active')">
+                        <h3 class="text-xl font-semibold">When will more features be added?</h3>
+                        <div class="faq-icon">
+                            <svg class="w-6 h-6 text-primary-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-6 pt-0 text-gray-600">
+                            <p>We're actively developing new features based on beta user feedback. Our roadmap includes 
+                               additional app integrations, custom automation workflows, team collaboration features, 
+                               and advanced reporting. We release updates approximately every two weeks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">Still have questions?</p>
+                <a href="mailto:support@productname.com" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                    Contact our support team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="mb-6">
+                        <div class="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 text-transparent bg-clip-text mb-3">ProductName</div>
+                        <p class="text-gray-400 max-w-xs">
+                            Automation for the modern professional. Save time, reduce errors, and focus on what matters most.
+                        </p>
+                    </div>
+                    <div class="flex space-x-5 mb-8">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex items-center space-x-1 text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="text-sm text-gray-400">4.8/5 from 200+ reviews</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Product</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-white transition-colors">Benefits</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; 2023 ProductName. All rights reserved.
+                </div>
+                <div class="flex flex-wrap gap-4 md:gap-8 text-sm">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                    <a href="mailto:hello@productname.com" class="text-gray-400 hover:text-white transition-colors">hello@productname.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // FAQs
+            document.querySelectorAll('#faq button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('svg');
+                    
+                    // Toggle rotation
+                    icon.classList.toggle('rotate-180');
+                    
+                    // Toggle visibility
+                    if (button.parentNode.classList.contains('active')) {
+                        content.style.maxHeight = "0px";
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80, // Adjusted for fixed header
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+            
+            // Add shadow to nav on scroll
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 10) {
+                    nav.classList.add('shadow-md');
+                    nav.classList.remove('shadow-sm');
+                } else {
+                    nav.classList.remove('shadow-md');
+                    nav.classList.add('shadow-sm');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
