@@ -1,1185 +1,604 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Discover how to use AI for creating high-converting landing pages quickly. Explore real, live examples and learn the techniques.">
-    <title>Learn AI Landing Pages & See Examples | Your Brand</title>
+    <title>Showcase: AI-Powered Landing Pages | [Your Name]</title>
+    <meta name="description" content="Explore a portfolio of modern landing pages rapidly built using cutting-edge AI tools.">
+
+    <!-- Favicon Placeholder (replace with your own) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography,aspect-ratio"></script>
+
+    <!-- Google Fonts (Example: Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+      // Tailwind Customization (Enhanced)
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: { // Enhanced primary color scheme with better contrast
+                DEFAULT: '#4338ca', // indigo-700 (darker for better contrast)
+                light: '#6366f1', // indigo-500
+                dark: '#312e81', // indigo-900
+                100: '#e0e7ff', // For subtle backgrounds
+                200: '#c7d2fe', // For light backgrounds
+              },
+              secondary: {
+                DEFAULT: '#059669', // emerald-600 (darker for better contrast)
+                light: '#10b981', // emerald-500 
+                dark: '#047857', // emerald-700
+              }
+            },
+            // Enhanced animations
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              scaleIn: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              }
+            },
+            animation: {
+              fadeInUp: 'fadeInUp 0.6s ease-out forwards',
+              fadeIn: 'fadeIn 0.6s ease-out forwards',
+              scaleIn: 'scaleIn 0.5s ease-out forwards',
+            },
+            // Focus state utilities for accessibility
+            boxShadow: {
+              'focus-primary': '0 0 0 3px rgba(67, 56, 202, 0.4)', // Primary color focus ring
+              'focus-secondary': '0 0 0 3px rgba(5, 150, 105, 0.4)', // Secondary color focus ring
+            },
+            transitionProperty: {
+              'height': 'height',
+              'spacing': 'margin, padding',
+            }
+          }
+        },
+        // Add more user-accessible variants
+        variants: {
+          extend: {
+            opacity: ['group-hover', 'focus-visible'],
+            transform: ['group-hover', 'hover', 'focus'],
+            ringColor: ['hover', 'focus-visible'],
+            ringWidth: ['hover', 'focus-visible'],
+          }
+        }
+      }
+    </script>
     <style>
-        :root {
-            --primary-color: #4361ee;
-            --secondary-color: #3a0ca3;
-            --accent-color: #4cc9f0;
-            --light-color: #f8f9fc;
-            --dark-color: #2b2d42;
-            --success-color: #4caf50;
-            --warning-color: #ff9800;
-            --danger-color: #f44336;
-            --body-bg: #ffffff;
-            --card-bg: #ffffff;
-            --text-color: #333333;
-            --text-muted: #6c757d;
-            --border-radius: 0.5rem;
-            --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-            --transition: all 0.3s ease;
-            --section-padding: 5rem 0;
-            --container-padding: 1.5rem;
-        }
-
+        /* Apply base font */
         body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--body-bg);
+            font-family: 'Inter', sans-serif;
+        }
+        /* Target elements to animate (example) */
+        .section-animate {
+            opacity: 0; /* Start hidden */
+        }
+        /* Simple scrollspy highlighting (requires JS for accuracy) */
+        /* This is a basic CSS version, JS is better */
+        /* nav a:target { font-weight: 600; color: #4f46e5; } */
+        /* Add new animation keyframes */
+        @keyframes blob {
+            0%, 100% { transform: scale(1) translate(0, 0); }
+            25% { transform: scale(1.05) translate(10px, 10px); }
+            50% { transform: scale(0.95) translate(-10px, 15px); }
+            75% { transform: scale(1.05) translate(-15px, -5px); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(var(--rotation, 0deg)); }
+            50% { transform: translateY(-20px) rotate(var(--rotation, 0deg)); }
+        }
+        
+        .animate-blob {
+            animation: blob 15s infinite;
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .animation-delay-2s {
+            animation-delay: 2s;
+        }
+        
+        .animation-delay-4s {
+            animation-delay: 4s;
         }
 
-        section {
-            padding: var(--section-padding);
+        /* Enhanced animation keyframes */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
-        .display-4 {
-            font-weight: 800;
-            letter-spacing: -0.5px;
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.03); opacity: 0.9; }
         }
 
-        .lead {
-            font-weight: 400;
-            font-size: 1.2rem;
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
-        .section-title {
-            margin-bottom: 2.5rem;
-            position: relative;
-            font-size: 2.5rem;
-            font-weight: 700;
+        /* Additional utility classes */
+        .animate-shimmer {
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0) 0%, 
+                rgba(255,255,255,0.4) 50%, 
+                rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
         }
 
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary-color);
-            margin-top: 1rem;
+        .animate-pulse-soft {
+            animation: pulse-soft 4s ease-in-out infinite;
         }
 
-        .text-center .section-title:after {
-            margin-left: auto;
-            margin-right: auto;
+        .animate-rotate-slow {
+            animation: rotate-slow 20s linear infinite;
         }
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            border-radius: var(--border-radius);
-            padding: 0.8rem 1.5rem;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: 0 4px 6px rgba(67, 97, 238, 0.2);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(67, 97, 238, 0.3);
-        }
-
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-        }
-
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .btn-lg {
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.8), rgba(58, 12, 163, 0.9)), url('https://source.unsplash.com/1600x900/?ai,technology') no-repeat center center/cover;
-            color: white;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTI4MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgNTEuNzZjMzYuMjEtMi4yNSA3Ny41Ny0zLjU4IDEyNi40Mi0zLjU4IDMyMCAwIDMyMCA1NyA2NDAgNTcgMjcxLjE1IDAgMzEyLjU4LTQwLjkxIDUxMy41OC01Ny40VjE0MEgweiIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjMiLz48L3N2Zz4=');
-            background-size: 100% 80px;
-            background-repeat: no-repeat;
-            background-position: bottom;
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero h1 {
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2.5rem;
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .card {
-            transition: var(--transition);
-            margin-bottom: 2rem;
-            border: none;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
-        }
-
-        .card-img-top {
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 2rem;
-        }
-
-        .card-footer {
-            background-color: transparent;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            padding: 1.5rem 2rem;
-        }
-
-        .testimonial {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 2rem;
-            box-shadow: var(--box-shadow);
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .testimonial:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
-        }
-
-        .testimonial:before {
-            content: '"';
-            position: absolute;
-            top: 0;
-            left: 2rem;
-            font-size: 5rem;
-            line-height: 1;
-            color: var(--primary-color);
-            opacity: 0.1;
-            font-family: serif;
-        }
-
-        .testimonial-img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid var(--primary-color);
-        }
-
-        .testimonial-meta h5 {
-            margin-bottom: 0.2rem;
-        }
-
-        .benefit-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .steps .col {
-            padding: 30px 15px;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 30px 0;
-        }
-
-        footer a {
-            color: white;
-            margin: 0 10px;
-        }
-
-        .showcase-filter .nav-link {
-            color: var(--dark-color);
-            border-radius: 50px;
-            padding: 0.5rem 1.5rem;
-            margin: 0 0.3rem;
-            transition: all 0.3s;
-        }
-
-        .showcase-filter .nav-link.active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .border-dashed {
-            border: 2px dashed var(--primary-color);
-            border-radius: 10px;
-        }
+        /* For sequential staggered animations */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
     </style>
 </head>
+<body class="bg-gray-50 text-gray-800 antialiased leading-normal">
 
-<body>
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9 text-center hero-content">
-                    <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInUp">Build High-Converting Landing
-                        Pages in Minutes with AI</h1>
-                    <p class="lead mb-5 animate__animated animate__fadeInUp animate__delay-1s">Learn the AI techniques
-                        transforming landing page creation for speed and results. Explore live examples built using
-                        these methods below.</p>
-                    <div class="animate__animated animate__fadeInUp animate__delay-2s">
-                        <a href="#showcase" class="btn btn-primary btn-lg me-3">Explore AI Page Examples</a>
-                        <a href="#how-it-works" class="btn btn-outline-light btn-lg">Learn How It Works</a>
+    <!-- ========== Hero Section ========== -->
+    <header class="relative overflow-hidden bg-gradient-to-br from-indigo-500/5 via-purple-500/10 to-pink-500/5 pt-24 pb-32 md:pt-32 md:pb-40">
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm shadow-sm text-primary font-medium text-sm tracking-wide mb-6 animate-fadeInUp" style="animation-delay: 0.05s;">AI-Powered Web Design</span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-8 leading-tight tracking-tight animate-fadeInUp" style="animation-delay: 0.1s;">
+                Landing Pages,<br class="hidden md:inline"> <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">Reimagined with AI</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed font-normal animate-fadeInUp" style="animation-delay: 0.3s; letter-spacing: -0.01em;">
+                Discover a collection of diverse landing pages designed and developed rapidly using the latest Artificial Intelligence tools. See the potential of AI in modern web creation.
+            </p>
+            <div class="animate-fadeInUp flex flex-col sm:flex-row gap-5 justify-center" style="animation-delay: 0.5s;">
+                <a href="#showcase" class="inline-block bg-primary text-white font-semibold text-lg py-3.5 px-10 rounded-lg shadow-lg hover:shadow-primary/40 hover:bg-primary-light transform hover:-translate-y-1 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-indigo-50">
+                    Explore the Showcase
+                </a>
+                <a href="#process" class="inline-block bg-white text-primary border border-primary/20 font-semibold text-lg py-3.5 px-10 rounded-lg shadow-sm hover:shadow-lg hover:bg-primary-100 hover:border-primary/30 transform hover:-translate-y-1 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-indigo-50">
+                    Learn the Process
+                </a>
+            </div>
+        </div>
+        <!-- Updated background elements -->
+        <div aria-hidden="true" class="absolute inset-0 z-0 overflow-hidden">
+            <!-- Modern blob shapes -->
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-indigo-200/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-pink-200/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2s"></div>
+            <div class="absolute top-1/2 left-1/3 w-96 h-96 bg-purple-200/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4s"></div>
+            
+            <!-- Enhanced decorative elements with new animations -->
+            <div class="absolute top-10 right-10 w-20 h-20 border border-primary/20 rounded-xl rotate-12 animate-float animate-pulse-soft"></div>
+            <div class="absolute bottom-20 left-20 w-12 h-12 bg-gradient-to-tr from-primary/10 to-purple-400/10 rounded-lg -rotate-12 animate-float animation-delay-2s"></div>
+            
+            <!-- Additional animated elements with new animations -->
+            <div class="absolute top-1/4 right-1/4 w-16 h-16 border-2 border-indigo-300/30 rounded-full animate-float animate-pulse-soft" style="--rotation: 15deg; animation-duration: 8s;"></div>
+            <div class="absolute bottom-1/3 right-1/5 w-8 h-8 bg-gradient-to-br from-purple-300/20 to-pink-300/20 rounded-md animate-float animation-delay-4s" style="--rotation: -10deg;"></div>
+            <div class="absolute top-1/3 left-1/4 w-10 h-10 border border-dashed border-primary/15 rounded-lg animate-rotate-slow" style="animation-duration: 15s;"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-24 h-24 bg-gradient-to-tr from-blue-200/10 to-indigo-200/10 rounded-full mix-blend-multiply filter blur-xl animate-pulse-soft" style="animation-duration: 4s;"></div>
+            <div class="absolute top-20 left-1/2 w-5 h-5 bg-yellow-300/30 rounded-full animate-ping" style="animation-duration: 3s;"></div>
+            
+            <!-- New shimmer effect elements -->
+            <div class="absolute top-1/2 right-1/3 w-32 h-1 bg-white/30 rounded-full animate-shimmer"></div>
+            <div class="absolute bottom-1/3 left-1/4 w-24 h-1 bg-white/20 rounded-full animate-shimmer animation-delay-2s"></div>
+        </div>
+    </header>
+
+    <!-- ========== Showcase Grid ========== -->
+    <section id="showcase" class="py-20 md:py-28 bg-gradient-to-b from-gray-50 via-white to-gray-50/80 section-animate relative overflow-hidden">
+        <!-- Fancy animated background elements -->
+        <div aria-hidden="true" class="absolute inset-0 z-0">
+            <!-- Background patterns -->
+            <div class="absolute top-0 right-0 w-full h-full bg-grid-primary/[0.02] bg-[length:30px_30px]"></div>
+            <div class="absolute inset-y-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/[0.02] to-transparent"></div>
+            <div class="absolute inset-y-0 left-0 w-1/3 h-full bg-gradient-to-r from-secondary/[0.02] to-transparent"></div>
+            
+            <!-- Animated background elements -->
+            <div class="absolute top-20 left-20 w-64 h-64 bg-primary/[0.03] rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute bottom-40 right-20 w-72 h-72 bg-secondary/[0.05] rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4s"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-200/[0.04] rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2s"></div>
+            
+            <!-- Decorative elements -->
+            <div class="absolute top-40 right-1/4 w-24 h-24 border border-primary/10 rounded-full animate-float animate-pulse-soft"></div>
+            <div class="absolute bottom-1/3 left-1/5 w-16 h-16 border border-dashed border-secondary/15 rounded-lg rotate-45 animate-float animation-delay-2s"></div>
+            <div class="absolute top-1/4 left-1/3 w-10 h-10 bg-gradient-to-br from-primary/5 to-secondary/10 rounded-lg -rotate-12 animate-float animation-delay-4s"></div>
+            <div class="absolute bottom-20 right-1/3 w-8 h-8 bg-yellow-300/20 rounded-full animate-ping" style="animation-duration: 3s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20 opacity-0 transform translate-y-10 transition-all duration-700 ease-out" data-animate="true">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-primary/20 to-purple-500/20 text-primary font-medium text-sm mb-4 animate-pulse backdrop-blur-sm shadow-sm">Our Work</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-5 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-600 to-primary">AI-Built Landing Page Gallery</h2>
+                <p class="text-gray-600 text-lg leading-relaxed">Explore our collection of landing pages built with AI assistance, each designed for specific use cases and business needs.</p>
+            </div>
+
+            <!-- Enhanced filtering controls -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 opacity-0 transform translate-y-10 transition-all duration-700 ease-out" data-animate="true" style="transition-delay: 0.1s;">
+                <button class="px-5 py-2 rounded-full bg-primary text-white font-medium text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">All Projects</button>
+                <button class="px-5 py-2 rounded-full bg-white text-gray-700 font-medium text-sm shadow-sm hover:shadow hover:bg-gray-50 transition-all duration-300">Startup</button>
+                <button class="px-5 py-2 rounded-full bg-white text-gray-700 font-medium text-sm shadow-sm hover:shadow hover:bg-gray-50 transition-all duration-300">Healthcare</button>
+                <button class="px-5 py-2 rounded-full bg-white text-gray-700 font-medium text-sm shadow-sm hover:shadow hover:bg-gray-50 transition-all duration-300">E-commerce</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+                <!-- Enhanced Showcase Card 1 -->
+                <div class="group bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-500 border border-gray-100/80 flex flex-col transform hover:-translate-y-3 hover:border-primary/20 opacity-0" data-animate="true" style="transition-delay: 0.2s;">
+                    <div class="relative overflow-hidden h-72">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="MVP Landing Page Screenshot" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <!-- Enhanced glass morphism overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-between backdrop-blur-[2px] group-hover:backdrop-blur-[1px]">
+                            <span class="m-5 px-4 py-2 bg-white/90 backdrop-blur-sm text-primary rounded-xl font-medium text-xs tracking-wide shadow-lg">Built with Framer AI</span>
+                            <a href="mvp-landing-page.html" class="m-5 px-5 py-2.5 bg-primary text-white rounded-xl font-medium text-sm hover:bg-primary-light transition duration-300 shadow-lg hover:shadow-primary/30 flex items-center gap-1.5 transform hover:scale-105">
+                                <span>Preview</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center gap-1.5 bg-indigo-100 text-indigo-700 text-xs font-semibold px-3.5 py-1.5 rounded-full animate-pulse-soft">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                                Startup / MVP
+                            </span>
+                            <span class="flex items-center text-amber-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="ml-1 text-xs font-medium">Featured</span>
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">Startup MVP Landing Page</h3>
+                        <p class="text-gray-600 text-base mb-6 flex-grow leading-relaxed">A minimalist, conversion-focused landing page perfect for startups launching their MVP. Features clean sections for features, benefits, and pricing.</p>
+                        <div class="flex justify-between items-center mt-4 pt-5 border-t border-gray-100">
+                            <span class="flex items-center text-sm font-medium text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                                </svg>
+                                <strong class="text-gray-700">Framer AI</strong>
+                            </span>
+                            <a href="mvp-landing-page.html" class="group/link text-sm font-medium text-primary hover:text-primary-light transition duration-300 flex items-center">
+                                <span class="relative">
+                                    View Details
+                                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover/link:w-full transition-all duration-300 ease-in-out"></span>
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5 transform group-hover/link:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Corner decoration -->
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-3xl"></div>
+                </div>
+
+                <!-- Enhanced Showcase Card 2 -->
+                <div class="group bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-500 border border-gray-100/80 flex flex-col transform hover:-translate-y-3 hover:border-secondary/20 opacity-0" data-animate="true" style="transition-delay: 0.4s;">
+                    <div class="relative overflow-hidden h-72">
+                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Healthcare Provider Page Screenshot" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <!-- Enhanced glass morphism overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-between backdrop-blur-[2px] group-hover:backdrop-blur-[1px]">
+                            <span class="m-5 px-4 py-2 bg-white/90 backdrop-blur-sm text-secondary rounded-xl font-medium text-xs tracking-wide shadow-lg">Built with Durable + ChatGPT</span>
+                            <a href="healthcare-provider.html" class="m-5 px-5 py-2.5 bg-secondary text-white rounded-xl font-medium text-sm hover:bg-secondary-light transition duration-300 shadow-lg hover:shadow-secondary/30 flex items-center gap-1.5 transform hover:scale-105">
+                                <span>Preview</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-700 text-xs font-semibold px-3.5 py-1.5 rounded-full animate-pulse-soft">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                                </svg>
+                                Healthcare
+                            </span>
+                            <span class="flex items-center text-cyan-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                <span class="ml-1 text-xs font-medium">Popular</span>
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-secondary transition-colors duration-300">Healthcare Provider Portal</h3>
+                        <p class="text-gray-600 text-base mb-6 flex-grow leading-relaxed">Professional landing page for healthcare providers, featuring appointment scheduling, provider profiles, and patient resources.</p>
+                        <div class="flex justify-between items-center mt-4 pt-5 border-t border-gray-100">
+                            <span class="flex items-center text-sm font-medium text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                                </svg>
+                                <strong class="text-gray-700">Durable + ChatGPT</strong>
+                            </span>
+                            <a href="healthcare-provider.html" class="group/link text-sm font-medium text-secondary hover:text-secondary-light transition duration-300 flex items-center">
+                                <span class="relative">
+                                    View Details
+                                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary group-hover/link:w-full transition-all duration-300 ease-in-out"></span>
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5 transform group-hover/link:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Corner decoration -->
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-secondary/10 to-transparent rounded-bl-3xl"></div>
+                </div>
+
+                <!-- Enhanced Showcase Card 3 -->
+                <div class="group bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-500 border border-gray-100/80 flex flex-col transform hover:-translate-y-3 hover:border-purple-500/20 opacity-0" data-animate="true" style="transition-delay: 0.6s;">
+                    <div class="relative overflow-hidden h-72">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Medical Services Landing Page Screenshot" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <!-- Enhanced glass morphism overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-between backdrop-blur-[2px] group-hover:backdrop-blur-[1px]">
+                            <span class="m-5 px-4 py-2 bg-white/90 backdrop-blur-sm text-purple-600 rounded-xl font-medium text-xs tracking-wide shadow-lg">Built with 10Web AI Builder</span>
+                            <a href="healthcare-landing.html" class="m-5 px-5 py-2.5 bg-purple-600 text-white rounded-xl font-medium text-sm hover:bg-purple-500 transition duration-300 shadow-lg hover:shadow-purple-500/30 flex items-center gap-1.5 transform hover:scale-105">
+                                <span>Preview</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center gap-1.5 bg-blue-100 text-blue-700 text-xs font-semibold px-3.5 py-1.5 rounded-full animate-pulse-soft">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                                </svg>
+                                Medical Services
+                            </span>
+                            <span class="flex items-center text-purple-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="ml-1 text-xs font-medium">Recent</span>
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">Healthcare Service Landing</h3>
+                        <p class="text-gray-600 text-base mb-6 flex-grow leading-relaxed">Modern landing page for healthcare organizations, featuring service offerings, patient testimonials, and easy contact options.</p>
+                        <div class="flex justify-between items-center mt-4 pt-5 border-t border-gray-100">
+                            <span class="flex items-center text-sm font-medium text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                                </svg>
+                                <strong class="text-gray-700">10Web AI Builder</strong>
+                            </span>
+                            <a href="healthcare-landing.html" class="group/link text-sm font-medium text-purple-600 hover:text-purple-500 transition duration-300 flex items-center">
+                                <span class="relative">
+                                    View Details
+                                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 group-hover/link:w-full transition-all duration-300 ease-in-out"></span>
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5 transform group-hover/link:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Corner decoration -->
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-purple-500/10 to-transparent rounded-bl-3xl"></div>
+                </div>
+            </div>
+            
+            <!-- "See More" button with fancy hover effect -->
+            <div class="flex justify-center mt-16 opacity-0 transform translate-y-10 transition-all duration-700 ease-out" data-animate="true" style="transition-delay: 0.8s;">
+                <a href="#all-projects" class="group inline-flex items-center gap-3 px-8 py-3.5 bg-white text-primary font-semibold text-lg rounded-full shadow-md hover:shadow-xl border border-primary/20 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                    <span class="relative z-10">See More Projects</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 relative z-10 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                    <!-- Animated background on hover -->
+                    <span class="absolute inset-0 w-full h-full scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Process Section ========== -->
+    <section id="process" class="py-20 md:py-28 bg-gradient-to-r from-indigo-50/40 via-white to-purple-50/40 section-animate overflow-hidden relative">
+        <!-- Decorative elements for fancy background -->
+        <div class="absolute inset-0 overflow-hidden opacity-70">
+            <div class="absolute top-0 left-1/4 w-64 h-64 bg-gradient-to-br from-primary/5 to-purple-200/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-tr from-indigo-100/10 to-cyan-100/5 rounded-full mix-blend-multiply filter blur-3xl"></div>
+            <div class="absolute top-1/3 right-0 w-40 h-40 bg-gradient-to-bl from-secondary/5 to-emerald-100/10 rounded-full mix-blend-multiply filter blur-2xl"></div>
+            
+            <!-- Animated shapes -->
+            <div class="absolute top-20 right-20 w-6 h-6 border border-primary/20 rounded-full animate-ping" style="animation-duration: 3s;"></div>
+            <div class="absolute bottom-40 left-20 w-8 h-8 bg-secondary/10 rounded-md animate-float animation-delay-2s"></div>
+            <div class="absolute top-1/2 right-1/3 w-20 h-1 bg-gradient-to-r from-primary/20 to-purple-300/0 rounded-full animate-shimmer"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 opacity-0 transform translate-y-10 transition-all duration-700 ease-out" data-animate="true">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-medium text-sm tracking-wide mb-4 backdrop-blur-sm shadow-sm">Our Process</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-5 leading-tight tracking-tight">How We <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">Build with AI</span></h2>
+                <p class="text-gray-600 text-lg">Discover our streamlined process for creating stunning landing pages using AI tools</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
+                <!-- Connecting lines between steps (visible on md+ screens) -->
+                <div class="absolute hidden md:block top-1/3 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-primary/40 to-secondary/40 transform -translate-y-1/2 z-0">
+                    <div class="absolute right-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+                </div>
+                <div class="absolute hidden md:block top-1/3 left-2/3 right-0 h-0.5 bg-gradient-to-r from-secondary/40 to-purple-400/40 transform -translate-y-1/2 z-0">
+                    <div class="absolute right-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+                </div>
+                
+                <!-- Step 1 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100/80 relative group hover:-translate-y-2 opacity-0 transform translate-y-10" data-animate="true" style="transition-delay: 0.1s">
+                    <div class="absolute -top-6 -left-6 bg-gradient-to-br from-primary to-indigo-600 text-white w-16 h-16 rounded-2xl rotate-3 flex items-center justify-center text-xl font-bold shadow-lg group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">1</div>
+                    <div class="relative pl-2">
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-4 group-hover:text-primary transition-colors duration-300">Strategy & Ideation</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">We define the purpose, audience, and goals of the landing page using AI to analyze trends and user behavior.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="bg-gradient-to-r from-primary/10 to-indigo-400/10 text-primary text-xs font-medium px-4 py-2 rounded-full tracking-wide shadow-sm">AI Research Tools</span>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-3 -right-3 w-24 h-24 bg-gradient-to-tr from-primary/5 to-transparent rounded-br-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100/80 relative group hover:-translate-y-2 opacity-0 transform translate-y-10" data-animate="true" style="transition-delay: 0.3s">
+                    <div class="absolute -top-6 -left-6 bg-gradient-to-br from-secondary to-green-500 text-white w-16 h-16 rounded-2xl rotate-3 flex items-center justify-center text-xl font-bold shadow-lg group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">2</div>
+                    <div class="relative pl-2">
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-4 group-hover:text-secondary transition-colors duration-300">AI-Powered Design</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">We leverage AI design tools to rapidly generate layouts, color schemes, and visual elements aligned with your brand.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="bg-gradient-to-r from-secondary/10 to-emerald-400/10 text-secondary text-xs font-medium px-4 py-2 rounded-full tracking-wide shadow-sm">Midjourney + DALL-E</span>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-3 -right-3 w-24 h-24 bg-gradient-to-tr from-secondary/5 to-transparent rounded-br-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100/80 relative group hover:-translate-y-2 opacity-0 transform translate-y-10" data-animate="true" style="transition-delay: 0.5s">
+                    <div class="absolute -top-6 -left-6 bg-gradient-to-br from-purple-500 to-pink-500 text-white w-16 h-16 rounded-2xl rotate-3 flex items-center justify-center text-xl font-bold shadow-lg group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">3</div>
+                    <div class="relative pl-2">
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-4 group-hover:text-purple-500 transition-colors duration-300">Rapid Development</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">We build the landing page using AI-assisted development tools that generate clean, optimized code.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="bg-gradient-to-r from-purple-500/10 to-pink-400/10 text-purple-500 text-xs font-medium px-4 py-2 rounded-full tracking-wide shadow-sm">AI Builders + ChatGPT</span>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-3 -right-3 w-24 h-24 bg-gradient-to-tr from-purple-500/5 to-transparent rounded-br-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem/Agitation Section -->
-    <section id="problem" class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h2 class="section-title">Tired of Slow, Costly Landing Page Builds?</h2>
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="me-3 fs-1"><i class="far fa-clock text-primary"></i></div>
-                        <div>
-                            <h4>Wasted Hours on Design</h4>
-                            <p>Spending days tweaking layouts and struggling with design choices.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="me-3 fs-1"><i class="fas fa-dollar-sign text-primary"></i></div>
-                        <div>
-                            <h4>High Costs for Developers</h4>
-                            <p>Paying premium rates for custom landing page development.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="me-3 fs-1"><i class="fas fa-edit text-primary"></i></div>
-                        <div>
-                            <h4>Struggling with Copywriting</h4>
-                            <p>Staring at blank pages trying to craft compelling copy that converts.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <div class="me-3 fs-1"><i class="fas fa-chart-line text-primary"></i></div>
-                        <div>
-                            <h4>Low Conversion Rates</h4>
-                            <p>Traditional approaches often miss the mark for today's audiences.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 mt-5 mt-lg-0 text-center">
-                    <img src="https://source.unsplash.com/600x400/?frustrated,work" alt="Frustrated with page building"
-                        class="img-fluid rounded shadow">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section id="solution" class="py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="section-title">The Solution: AI-Powered Landing Page Creation</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <p class="lead mb-4">AI tools now make it possible to generate compelling copy, suggest effective
-                        layouts, and speed up the entire creation process - all without needing extensive technical
-                        skills. The result? Better pages, faster launches, and higher conversion rates.</p>
-                    <div class="text-center mt-5">
-                        <img src="https://source.unsplash.com/800x400/?ai,assistant" alt="AI Assistant"
-                            class="img-fluid rounded shadow">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Simple Steps to Your AI-Built Page</h2>
-            <div class="row text-center steps">
-                <div class="col">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Define Your Goal</h3>
-                    <p>Tell the AI about your audience, offer, and objective to set clear direction.</p>
-                </div>
-                <div class="col">
-                    <div class="benefit-icon">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                    <h3>Generate & Refine</h3>
-                    <p>Let the AI suggest copy and design, then customize it to match your brand.</p>
-                </div>
-                <div class="col">
-                    <div class="benefit-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Launch & Convert</h3>
-                    <p>Publish your page quickly and start attracting leads and sales immediately.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">Why Use AI for Landing Pages?</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 p-4">
-                        <div class="text-center">
-                            <i class="fas fa-bolt benefit-icon"></i>
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Speed</h4>
-                            <p class="card-text">Launch pages in hours, not weeks. Get to market faster than
-                                competitors.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 p-4">
-                        <div class="text-center">
-                            <i class="fas fa-piggy-bank benefit-icon"></i>
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Cost Savings</h4>
-                            <p class="card-text">Reduce expenses on designers, developers and expensive page builders.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 p-4">
-                        <div class="text-center">
-                            <i class="fas fa-laptop-code benefit-icon"></i>
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Ease of Use</h4>
-                            <p class="card-text">No coding skills required. AI handles the technical aspects for you.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 p-4">
-                        <div class="text-center">
-                            <i class="fas fa-pen-fancy benefit-icon"></i>
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Better Copy</h4>
-                            <p class="card-text">AI copywriting tools generate compelling headlines and content that
-                                converts.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 p-4">
-                        <div class="text-center">
-                            <i class="fas fa-paint-brush benefit-icon"></i>
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Design Ideas</h4>
-                            <p class="card-text">Overcome creative blocks with AI-suggested layouts and design elements.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 p-4">
-                        <div class="text-center">
-                            <i class="fas fa-tachometer-alt benefit-icon"></i>
-                        </div>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Faster Testing</h4>
-                            <p class="card-text">Iterate quickly with AI-generated variations to optimize conversion
-                                rates.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Showcase Section -->
-    <section id="showcase" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Explore Live AI-Generated Landing Pages</h2>
-            <p class="text-center mb-5">These landing pages were created using the AI methods discussed. Click to view
-                each live example.</p>
-
-            <!-- Showcase Navigation -->
-            <div class="row mb-5">
-                <div class="col-12">
-                    <div class="d-flex justify-content-center">
-                        <nav class="showcase-filter">
-                            <ul class="nav nav-pills">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#" data-filter="all">All Examples</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" data-filter="saas">SaaS</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" data-filter="ecommerce">E-commerce</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" data-filter="events">Events</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row showcase-items">
-                <!-- SaaS Example -->
-                <div class="col-lg-4 col-md-6 mb-4 showcase-item saas">
-                    <div class="card h-100 border-0 shadow">
-                        <div class="position-relative">
-                            <img src="https://source.unsplash.com/random/400×300/?website,saas" class="card-img-top"
-                                alt="SaaS Free Trial Page">
-                            <div class="position-absolute top-0 end-0 bg-primary text-white px-3 py-1 m-2 rounded">SaaS
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">SaaS Free Trial Page</h4>
-                            <p class="card-text">Lead generation page for a software trial, with copy assisted by AI.
-                            </p>
-                            <div class="mt-3">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <small class="text-muted">Conversion Rate</small>
-                                    <small class="text-success">+45%</small>
-                                </div>
-                                <div class="progress mb-3" style="height: 5px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 75%;"
-                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="d-flex justify-content-between small text-muted mb-3">
-                                    <span><i class="fas fa-calendar-alt me-1"></i> Created: Jan 2023</span>
-                                    <span><i class="fas fa-clock me-1"></i> Build Time: 2 hours</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between">
-                            <a href="https://www.examplepage1url.com" target="_blank" class="btn btn-primary">View Live
-                                Page</a>
-                            <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
-                                data-bs-target="#saasModal"><i class="fas fa-info-circle"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- E-commerce Example -->
-                <div class="col-lg-4 col-md-6 mb-4 showcase-item ecommerce">
-                    <div class="card h-100 border-0 shadow">
-                        <div class="position-relative">
-                            <img src="https://source.unsplash.com/random/400×300/?ecommerce,product"
-                                class="card-img-top" alt="E-commerce Product Page">
-                            <div class="position-absolute top-0 end-0 bg-info text-white px-3 py-1 m-2 rounded">
-                                E-commerce</div>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">E-commerce Product Page</h4>
-                            <p class="card-text">High-converting product page with AI-generated descriptions and layout.
-                            </p>
-                            <div class="mt-3">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <small class="text-muted">Conversion Rate</small>
-                                    <small class="text-success">+68%</small>
-                                </div>
-                                <div class="progress mb-3" style="height: 5px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 85%;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="d-flex justify-content-between small text-muted mb-3">
-                                    <span><i class="fas fa-calendar-alt me-1"></i> Created: Feb 2023</span>
-                                    <span><i class="fas fa-clock me-1"></i> Build Time: 3 hours</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between">
-                            <a href="https://www.examplepage2url.com" target="_blank" class="btn btn-primary">View Live
-                                Page</a>
-                            <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
-                                data-bs-target="#ecommerceModal"><i class="fas fa-info-circle"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event Example -->
-                <div class="col-lg-4 col-md-6 mb-4 showcase-item events">
-                    <div class="card h-100 border-0 shadow">
-                        <div class="position-relative">
-                            <img src="https://source.unsplash.com/random/400×300/?webinar,event" class="card-img-top"
-                                alt="Webinar Registration Page">
-                            <div class="position-absolute top-0 end-0 bg-warning text-dark px-3 py-1 m-2 rounded">Event
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Webinar Registration Page</h4>
-                            <p class="card-text">Event registration page with AI-optimized headline and persuasive
-                                elements.</p>
-                            <div class="mt-3">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <small class="text-muted">Signup Rate</small>
-                                    <small class="text-success">+92%</small>
-                                </div>
-                                <div class="progress mb-3" style="height: 5px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 92%;"
-                                        aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="d-flex justify-content-between small text-muted mb-3">
-                                    <span><i class="fas fa-calendar-alt me-1"></i> Created: Mar 2023</span>
-                                    <span><i class="fas fa-clock me-1"></i> Build Time: 1.5 hours</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between">
-                            <a href="https://www.examplepage3url.com" target="_blank" class="btn btn-primary">View Live
-                                Page</a>
-                            <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
-                                data-bs-target="#eventModal"><i class="fas fa-info-circle"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add more showcase items here -->
-                <div class="col-lg-4 col-md-6 mb-4 showcase-item saas">
-                    <div class="card h-100 border-0 shadow">
-                        <div class="position-relative">
-                            <img src="https://source.unsplash.com/random/400×300/?dashboard,app" class="card-img-top"
-                                alt="SaaS Dashboard Page">
-                            <div class="position-absolute top-0 end-0 bg-primary text-white px-3 py-1 m-2 rounded">SaaS
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">SaaS Dashboard Demo</h4>
-                            <p class="card-text">Interactive dashboard preview with AI-generated data visualization
-                                elements.</p>
-                            <div class="mt-3">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <small class="text-muted">Demo Engagement</small>
-                                    <small class="text-success">+38%</small>
-                                </div>
-                                <div class="progress mb-3" style="height: 5px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 65%;"
-                                        aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="d-flex justify-content-between small text-muted mb-3">
-                                    <span><i class="fas fa-calendar-alt me-1"></i> Created: Apr 2023</span>
-                                    <span><i class="fas fa-clock me-1"></i> Build Time: 4 hours</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between">
-                            <a href="https://www.examplepage4url.com" target="_blank" class="btn btn-primary">View Live
-                                Page</a>
-                            <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
-                                data-bs-target="#dashboardModal"><i class="fas fa-info-circle"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4 showcase-item ecommerce">
-                    <div class="card h-100 border-0 shadow">
-                        <div class="position-relative">
-                            <img src="https://source.unsplash.com/random/400×300/?shop,sale" class="card-img-top"
-                                alt="Flash Sale Page">
-                            <div class="position-absolute top-0 end-0 bg-info text-white px-3 py-1 m-2 rounded">
-                                E-commerce</div>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Limited-Time Flash Sale</h4>
-                            <p class="card-text">Time-sensitive offer page with AI-generated urgency elements and
-                                countdown.</p>
-                            <div class="mt-3">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <small class="text-muted">Conversion Rate</small>
-                                    <small class="text-success">+74%</small>
-                                </div>
-                                <div class="progress mb-3" style="height: 5px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%;"
-                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="d-flex justify-content-between small text-muted mb-3">
-                                    <span><i class="fas fa-calendar-alt me-1"></i> Created: May 2023</span>
-                                    <span><i class="fas fa-clock me-1"></i> Build Time: 2.5 hours</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between">
-                            <a href="https://www.examplepage5url.com" target="_blank" class="btn btn-primary">View Live
-                                Page</a>
-                            <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
-                                data-bs-target="#saleModal"><i class="fas fa-info-circle"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4 showcase-item events">
-                    <div class="card h-100 border-0 shadow">
-                        <div class="position-relative">
-                            <img src="https://source.unsplash.com/random/400×300/?conference,event" class="card-img-top"
-                                alt="Conference Landing Page">
-                            <div class="position-absolute top-0 end-0 bg-warning text-dark px-3 py-1 m-2 rounded">Event
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Virtual Conference</h4>
-                            <p class="card-text">Multi-speaker event page with AI-optimized agenda and speaker
-                                highlights.</p>
-                            <div class="mt-3">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <small class="text-muted">Registration Rate</small>
-                                    <small class="text-success">+83%</small>
-                                </div>
-                                <div class="progress mb-3" style="height: 5px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 83%;"
-                                        aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="d-flex justify-content-between small text-muted mb-3">
-                                    <span><i class="fas fa-calendar-alt me-1"></i> Created: Jun 2023</span>
-                                    <span><i class="fas fa-clock me-1"></i> Build Time: 3.5 hours</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between">
-                            <a href="https://www.examplepage6url.com" target="_blank" class="btn btn-primary">View Live
-                                Page</a>
-                            <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
-                                data-bs-target="#conferenceModal"><i class="fas fa-info-circle"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- "Add Your Page" Card -->
-            <div class="row mt-4">
-                <div class="col-12">
-                    <div class="card border-dashed p-5 bg-light text-center">
-                        <div class="card-body">
-                            <i class="fas fa-plus-circle fa-3x mb-3 text-primary"></i>
-                            <h4>Want Your Own AI Landing Page?</h4>
-                            <p>Learn how to create your own high-converting page using the same techniques</p>
-                            <a href="#main-cta" class="btn btn-primary">Get Started Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal for SaaS Example -->
-    <div class="modal fade" id="saasModal" tabindex="-1" aria-labelledby="saasModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="saasModalLabel">SaaS Free Trial Page Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="https://source.unsplash.com/random/600×400/?website,saas"
-                                class="img-fluid rounded mb-3" alt="SaaS Free Trial Page">
-                        </div>
-                        <div class="col-md-6">
-                            <h4>Project Overview</h4>
-                            <p>This SaaS landing page was created for a client looking to increase free trial signups
-                                for their project management tool.</p>
-
-                            <h5 class="mt-4">AI Techniques Used</h5>
-                            <ul>
-                                <li>AI-generated headline variations (tested 5 versions)</li>
-                                <li>Pain point identification through AI analysis</li>
-                                <li>Feature benefit rewording using NLP</li>
-                                <li>CTA optimization using sentiment analysis</li>
-                            </ul>
-
-                            <h5 class="mt-4">Results</h5>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Conversion Rate</span>
-                                <span class="text-success">+45%</span>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Time on Page</span>
-                                <span class="text-success">+62%</span>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Build Time Saved</span>
-                                <span class="text-success">73%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="https://www.examplepage1url.com" target="_blank" class="btn btn-primary">View Live Page</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for E-commerce Example -->
-    <div class="modal fade" id="ecommerceModal" tabindex="-1" aria-labelledby="ecommerceModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ecommerceModalLabel">E-commerce Product Page Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="https://source.unsplash.com/random/600×400/?ecommerce,product"
-                                class="img-fluid rounded mb-3" alt="E-commerce Product Page">
-                        </div>
-                        <div class="col-md-6">
-                            <h4>Project Overview</h4>
-                            <p>This product page was created for an online boutique selling premium handcrafted items,
-                                aiming to improve product descriptions and increase sales.</p>
-
-                            <h5 class="mt-4">AI Techniques Used</h5>
-                            <ul>
-                                <li>AI-generated product descriptions with sensory language</li>
-                                <li>Visual element prioritization through AI analysis</li>
-                                <li>Social proof placement optimization</li>
-                                <li>Pricing psychology implementation</li>
-                            </ul>
-
-                            <h5 class="mt-4">Results</h5>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Conversion Rate</span>
-                                <span class="text-success">+68%</span>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Average Order Value</span>
-                                <span class="text-success">+23%</span>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Cart Abandonment</span>
-                                <span class="text-success">-35%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="https://www.examplepage2url.com" target="_blank" class="btn btn-primary">View Live Page</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Event Example -->
-    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="eventModalLabel">Webinar Registration Page Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="https://source.unsplash.com/random/600×400/?webinar,event"
-                                class="img-fluid rounded mb-3" alt="Webinar Registration Page">
-                        </div>
-                        <div class="col-md-6">
-                            <h4>Project Overview</h4>
-                            <p>This webinar registration page was designed for a financial advisory firm running
-                                educational sessions on retirement planning.</p>
-
-                            <h5 class="mt-4">AI Techniques Used</h5>
-                            <ul>
-                                <li>AI headline generator focusing on FOMO triggers</li>
-                                <li>Benefit-driven bullet points using GPT-4</li>
-                                <li>Speaker bio optimization</li>
-                                <li>Registration form simplification through UX analysis</li>
-                            </ul>
-
-                            <h5 class="mt-4">Results</h5>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Registration Rate</span>
-                                <span class="text-success">+92%</span>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Attendance Rate</span>
-                                <span class="text-success">+45%</span>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Post-Event Conversion</span>
-                                <span class="text-success">+78%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="https://www.examplepage3url.com" target="_blank" class="btn btn-primary">View Live Page</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Add modals for the other examples -->
-
+    <!-- Enhanced JS for animations and interactions -->
     <script>
-        // Add this script to your existing JavaScript
-        document.addEventListener('DOMContentLoaded', function () {
-            // Filter showcase items
-            const filterButtons = document.querySelectorAll('.showcase-filter .nav-link');
-            const showcaseItems = document.querySelectorAll('.showcase-item');
+        // Improved Animation Trigger on Scroll with staggered reveals
+        const animatedSections = document.querySelectorAll('.section-animate');
+        const staggeredItems = document.querySelectorAll('.group');
+        const dataAnimateItems = document.querySelectorAll('[data-animate="true"]');
 
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-
-                    // Add active class to clicked button
-                    this.classList.add('active');
-
-                    // Get filter value
-                    const filter = this.getAttribute('data-filter');
-
-                    // Show/hide items based on filter
-                    showcaseItems.forEach(item => {
-                        if (filter === 'all' || item.classList.contains(filter)) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
+        // Main section animations with better threshold and options
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    entry.target.classList.add('animate-fadeInUp');
+                    
+                    // Find staggered items within this section
+                    const items = entry.target.querySelectorAll('.group');
+                    if (items.length) {
+                        items.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.classList.add('animate-fadeInUp');
+                                item.style.opacity = '1';
+                            }, 150 * index); // Stagger each item
+                        });
+                    }
+                    
+                    // Find data-animate items
+                    const animatedElements = entry.target.querySelectorAll('[data-animate="true"]');
+                    if (animatedElements.length) {
+                        animatedElements.forEach((element) => {
+                            element.style.opacity = '1';
+                            element.style.transform = 'translateY(0)';
+                        });
+                    }
+                }
             });
+        }, { 
+            threshold: 0.15,
+            rootMargin: '0px 0px -10% 0px'
         });
-    </script>
 
-    <!-- Main CTA Section -->
-    <section id="main-cta" class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h2 class="section-title">Ready to Build Your Own AI Landing Page?</h2>
-                    <p class="lead mb-4">Get your free AI Landing Page Creation Guide and learn the exact prompts and
-                        tools I use to create high-converting pages in minutes instead of days.</p>
-                    <a href="https://www.your-offer-signup-url.com" class="btn btn-primary btn-lg px-5 py-3">Download
-                        FREE Guide Now</a>
-                </div>
-                <div class="col-lg-5 mt-5 mt-lg-0 text-center">
-                    <img src="https://source.unsplash.com/random/400×500/?ebook,guide" alt="Free AI Guide"
-                        class="img-fluid rounded shadow">
-                </div>
-            </div>
-        </div>
-    </section>
+        // Staggered card animations
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate-fadeInUp');
+                        entry.target.style.opacity = '1';
+                    }, 100 * index); // Slightly stagger each card
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -5% 0px'
+        });
+        
+        // Data animate elements observer
+        const elementObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { 
+            threshold: 0.2,
+            rootMargin: '0px 0px -10% 0px'
+        });
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">What People Are Saying</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="testimonial">
-                        <p class="mb-4">I was spending thousands on developers for landing pages. With these AI
-                            techniques, I've cut costs by 80% and my pages convert better than ever!</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://source.unsplash.com/random/100×100/?person" class="testimonial-img me-3"
-                                alt="Sarah Johnson">
-                            <div class="testimonial-meta">
-                                <h5>Sarah Johnson</h5>
-                                <small class="text-muted">E-commerce Store Owner</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial">
-                        <p class="mb-4">As a marketer with no design skills, AI landing page creation has been a
-                            game-changer. I launched 5 pages last month alone!</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://source.unsplash.com/random/100×100/?man" class="testimonial-img me-3"
-                                alt="Michael Chen">
-                            <div class="testimonial-meta">
-                                <h5>Michael Chen</h5>
-                                <small class="text-muted">Digital Marketing Manager</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial">
-                        <p class="mb-4">The copy suggestions from AI were brilliant - I could never have written such
-                            compelling headlines by myself. My conversion rate doubled.</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://source.unsplash.com/random/100×100/?woman" class="testimonial-img me-3"
-                                alt="Emma Rodriguez">
-                            <div class="testimonial-meta">
-                                <h5>Emma Rodriguez</h5>
-                                <small class="text-muted">Freelance Copywriter</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-5">
-                <h5 class="mb-4">Trusted By</h5>
-                <div class="row justify-content-center">
-                    <div class="col-md-2 col-4 mb-3">
-                        <img src="https://source.unsplash.com/random/100×50/?logo,tech" alt="Company Logo"
-                            class="img-fluid">
-                    </div>
-                    <div class="col-md-2 col-4 mb-3">
-                        <img src="https://source.unsplash.com/random/100×50/?logo,brand" alt="Company Logo"
-                            class="img-fluid">
-                    </div>
-                    <div class="col-md-2 col-4 mb-3">
-                        <img src="https://source.unsplash.com/random/100×50/?logo,corporate" alt="Company Logo"
-                            class="img-fluid">
-                    </div>
-                    <div class="col-md-2 col-4 mb-3">
-                        <img src="https://source.unsplash.com/random/100×50/?logo,business" alt="Company Logo"
-                            class="img-fluid">
-                    </div>
-                    <div class="col-md-2 col-4 mb-3">
-                        <img src="https://source.unsplash.com/random/100×50/?logo,startup" alt="Company Logo"
-                            class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        // Initialize observers
+        animatedSections.forEach(section => {
+            section.style.animationPlayState = 'paused';
+            sectionObserver.observe(section);
+        });
 
-    <!-- About Section -->
-    <section id="about" class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 text-center mb-4 mb-lg-0">
-                    <img src="https://source.unsplash.com/random/400×400/?portrait,professional" alt="Your Name"
-                        class="img-fluid rounded-circle w-75">
-                </div>
-                <div class="col-lg-7">
-                    <h2 class="section-title">Meet Your Guide, Your Name</h2>
-                    <p class="lead mb-4">With over 10 years of experience in digital marketing and a specialization in
-                        AI-powered content creation, I've helped hundreds of businesses transform their landing pages
-                        for better results. My mission is to make cutting-edge AI technology accessible to everyone who
-                        wants to grow their online presence.</p>
-                    <div class="d-flex">
-                        <a href="#" class="me-3 fs-4"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="me-3 fs-4"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="me-3 fs-4"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="fs-4"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        staggeredItems.forEach(item => {
+            item.style.opacity = '0';
+            cardObserver.observe(item);
+        });
+        
+        dataAnimateItems.forEach(item => {
+            elementObserver.observe(item);
+        });
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Frequently Asked Questions</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What AI tools do you recommend?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    I recommend a combination of tools depending on your needs. For copywriting, tools
-                                    like GPT-4 and Jasper are excellent. For design, Midjourney and DALL-E help with
-                                    visuals. The exact toolset is covered in detail in my free guide, with step-by-step
-                                    instructions on how to use each one effectively.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Is this suitable for beginners?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Absolutely! The methods I teach are specifically designed to make AI landing page
-                                    creation accessible to everyone, regardless of technical experience. If you can use
-                                    a word processor, you can use these AI tools to create professional landing pages.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Can I customize the AI output?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Yes, that's one of the biggest advantages! AI provides you with a strong foundation
-                                    that you can then customize to match your brand voice and specific needs. You always
-                                    maintain creative control while leveraging AI to do the heavy lifting.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    How much money can I save using these techniques?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Most of my students report savings of 60-80% compared to traditional methods of
-                                    creating landing pages. A typical custom landing page might cost $1,500-$5,000 when
-                                    hiring professionals, while using AI techniques can bring that down to just the cost
-                                    of the tools (often under $100/month) plus your time.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    Will these pages work on mobile devices?
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Yes, all the techniques and templates I recommend are fully responsive and
-                                    mobile-friendly. In fact, I place special emphasis on mobile optimization since more
-                                    than 50% of web traffic now comes from mobile devices.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section id="final-cta" class="py-5 bg-primary text-white text-center">
-        <div class="container">
-            <h3 class="mb-4">Don't Miss Out!</h3>
-            <a href="https://www.your-offer-signup-url.com" class="btn btn-light btn-lg px-5 py-3">Download FREE Guide
-                Now</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">© 2023 Your Name/Brand. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Smooth scrolling for anchor links
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Smooth scroll with a slight offset
+                    window.scrollTo({
+                        top: target.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
-</body>
 
+</body>
 </html>
