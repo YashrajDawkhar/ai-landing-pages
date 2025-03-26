@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGrowth: Unlock Sustainable Business Growth with the Free Eco-Friendly Playbook</title>
+    <meta name="description" content="Get your exclusive free sustainable growth guide for eco-conscious businesses. Stop wasting resources on ineffective tactics, start building a profitable green business today. Download instantly.">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        secondary: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom CSS for Scrolling Marquee */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            animation: marquee 40s linear infinite;
+            will-change: transform;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .marquee-group {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            min-width: 100%;
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .testimonial-card {
+                width: 90vw !important;
+                max-width: 320px;
+            }
+            .animate-marquee {
+                animation: marquee 30s linear infinite;
+            }
+        }
+
+        /* Subtle Animated Gradient Background */
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-gradient {
+            background-size: 300% 300%;
+            animation: gradient-animation 15s ease infinite;
+        }
+
+        /* Styles for Angled Section Dividers */
+        .angled-top::before, .angled-bottom::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: inherit;
+            z-index: 0;
+            transform-origin: left;
+        }
+        .angled-top::before {
+            top: 0;
+            transform: skewY(-2deg);
+            margin-top: -40px;
+        }
+        .angled-bottom::after {
+            bottom: 0;
+            transform: skewY(2deg);
+            margin-bottom: -40px;
+        }
+        .angled-top > *, .angled-bottom > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* FAQ Grid Layout */
+        details.faq-item {
+             background-color: white;
+             border-radius: 0.5rem;
+             padding: 1.5rem;
+             box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+             transition: all 0.3s ease;
+        }
+        details.faq-item:hover {
+             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+             transform: translateY(-2px);
+        }
+        details.faq-item summary {
+             list-style: none;
+             cursor: pointer;
+             font-weight: 600;
+             color: #111827;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+        }
+        details.faq-item summary::-webkit-details-marker { display: none; }
+        details.faq-item summary::after {
+             content: '+';
+             font-size: 1.5em;
+             line-height: 1;
+             font-weight: bold;
+             transition: transform 0.2s ease-in-out;
+        }
+        details[open].faq-item summary::after { transform: rotate(45deg); }
+        details.faq-item div {
+             margin-top: 1rem;
+             color: #4B5563;
+             line-height: 1.75;
+        }
+        
+        /* Modern floating elements */
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        .floating-delay-1 {
+            animation-delay: 1s;
+        }
+        .floating-delay-2 {
+            animation-delay: 2s;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Glass effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Blob animation with containment */
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 15s infinite;
+            contain: layout;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+        
+        /* Card hover effect */
+        .hover-card-rise {
+            transition: all 0.3s ease;
+        }
+        .hover-card-rise:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        /* Decorative elements containment */
+        .decorative-container {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="glass sticky top-0 z-50">
+        <nav class="container mx-auto max-w-7xl px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" aria-label="Home" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-secondary-600 to-primary-600 transition-all duration-300 hover:scale-105">
+                GreenGrowth
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#whats-inside" class="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">What's Inside</a>
+                <a href="#testimonials" class="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">Testimonials</a>
+                <a href="#faq" class="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">FAQ</a>
+            </div>
+            <div>
+                <a href="#lead-gen-form-section" class="group rounded-full bg-gradient-to-r from-secondary-500 to-primary-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-all duration-300 ease-in-out transform hover:scale-105">
+                    Get Instant Access 
+                    <span aria-hidden="true" class="inline-block transition-transform group-hover:translate-x-1">→</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- =================================== -->
+        <!-- Hero Section w/ Overlapping Element -->
+        <!-- =================================== -->
+        <section id="lead-gen-form-section" class="relative overflow-hidden bg-gradient-to-br from-secondary-50 via-white to-primary-50 animated-gradient py-20 md:py-28 lg:pt-32 lg:pb-40">
+          <!-- Decorative container for shapes -->
+          <div class="decorative-container">
+            <!-- Decorative shapes -->
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-secondary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+            <div class="absolute top-80 -right-20 w-80 h-80 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-20 left-40 w-72 h-72 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+            
+            <!-- Small floating elements -->
+            <div class="absolute top-1/4 left-1/4 w-6 h-6 bg-secondary-400 rounded-full shadow-lg floating"></div>
+            <div class="absolute top-1/3 right-1/4 w-8 h-8 bg-primary-400 rounded-full shadow-lg floating floating-delay-1"></div>
+            <div class="absolute bottom-1/4 right-1/3 w-4 h-4 bg-amber-400 rounded-full shadow-lg floating floating-delay-2"></div>
+          </div>
+          
+          <div class="container mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+              <!-- Column 1: Content & Form -->
+              <div class="text-center lg:text-left lg:pr-8 xl:pr-12">
+                <span class="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-800 text-sm font-medium mb-5">FREE DOWNLOAD</span>
+                <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+                  The <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary-600 to-primary-600">Ultimate Guide</span> to Sustainable Growth
+                </h1>
+                <p class="mt-5 text-lg lg:text-xl leading-8 text-gray-600 max-w-xl mx-auto lg:mx-0">
+                  Stop wasting resources on ineffective tactics and finally grow your eco-friendly business sustainably. Download your FREE "<span class="font-semibold text-gray-800">2023 Green Growth Playbook</span>" now for actionable steps.
+                </p>
+
+                <!-- Signup Form -->
+                <form action="https://formspree.io/f/yourformid" method="POST" class="mt-8 max-w-md mx-auto lg:mx-0">
+                  <div class="flex flex-col sm:flex-row gap-3">
+                    <label for="lead-email-hero" class="sr-only">Email address</label>
+                    <input
+                      id="lead-email-hero" name="email" type="email" autocomplete="email" required
+                      class="flex-auto w-full rounded-full border-gray-200 px-4 py-3.5 text-gray-900 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500 sm:text-sm transition duration-300"
+                      placeholder="your.email@example.com"
+                    />
+                    <button
+                      type="submit"
+                      class="w-full sm:w-auto flex-none rounded-full bg-gradient-to-r from-secondary-500 to-primary-600 px-7 py-3.5 text-base font-semibold text-white shadow-lg hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transform hover:scale-105 transition duration-300 ease-in-out"
+                    >
+                      Get The Playbook!
+                    </button>
+                  </div>
+                  <p class="mt-3 text-xs text-gray-500">
+                    100% Free. Unsubscribe anytime. Privacy respected.
+                  </p>
+                </form>
+              </div>
+
+              <!-- Column 2: Visual (Overlapping on lg+) -->
+               <div class="relative mt-10 lg:mt-0 lg:ml-[-4rem] xl:ml-[-6rem] group">
+                 <!-- Decorative background shape -->
+                 <div class="absolute inset-0 translate-x-4 translate-y-4 sm:translate-x-8 sm:translate-y-8 lg:translate-x-6 lg:translate-y-6 rounded-2xl bg-gradient-to-br from-secondary-200 to-primary-200 opacity-50 blur-lg group-hover:opacity-70 group-hover:scale-105 transition-all duration-500"></div>
+                 <!-- Image frame -->
+                 <div class="relative z-10 bg-white p-2 rounded-xl shadow-2xl overflow-hidden transform group-hover:rotate-[-2deg] group-hover:scale-[1.02] transition-transform duration-500 ease-out">
+                   <img
+                     src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" 
+                     alt="Cover of the Green Growth Playbook guide" 
+                     class="w-full h-auto aspect-[4/3] object-cover rounded-lg"
+                   />
+                   <!-- Decorative elements on the image -->
+                   <div class="absolute top-3 right-3 w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                     <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path></svg>
+                   </div>
+                 </div>
+               </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================== -->
+        <!-- "What's Inside" - Vertical Stepper -->
+        <!-- =================================== -->
+        <section id="guide-overview" class="bg-white py-16 sm:py-24 relative overflow-hidden angled-bottom">
+            <div class="container mx-auto max-w-3xl px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-12 sm:mb-16">
+                    <h2 class="text-base font-semibold leading-7 text-indigo-600">Dive Deeper</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        What You'll Discover Inside
+                    </p>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">
+                        This free guide breaks down everything you need to know about growing your business strategically in 2023.
+                    </p>
+                </div>
+
+                <ol class="relative border-l border-gray-200 dark:border-gray-700 space-y-10 ml-4">
+                    <!-- Step 1 -->
+                    <li class="ml-8">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-purple-100 rounded-full -left-4 ring-8 ring-white dark:ring-gray-900 dark:bg-purple-900">
+                            <svg class="w-4 h-4 text-purple-600 dark:text-purple-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                            </svg>
+                        </span>
+                        <h3 class="mb-1 text-xl font-semibold text-gray-900 dark:text-white">Chapter 1: Market Strategy</h3>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Learn how to identify untapped market opportunities and position your business for maximum growth in today's competitive landscape.</p>
+                    </li>
+                     <!-- Step 2 -->
+                    <li class="ml-8">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-sky-100 rounded-full -left-4 ring-8 ring-white dark:ring-gray-900 dark:bg-sky-900">
+                           <svg class="w-4 h-4 text-sky-600 dark:text-sky-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14"> <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/> </svg>
+                        </span>
+                        <h3 class="mb-1 text-xl font-semibold text-gray-900 dark:text-white">Chapter 2: Customer Acquisition</h3>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Discover proven strategies for attracting high-quality leads and converting them into loyal customers using both digital and traditional channels.</p>
+                    </li>
+                     <!-- Step 3 -->
+                    <li class="ml-8">
+                        <span class="absolute flex items-center justify-center w-8 h-8 bg-purple-100 rounded-full -left-4 ring-8 ring-white dark:ring-gray-900 dark:bg-purple-900">
+                           <svg class="w-4 h-4 text-purple-600 dark:text-purple-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20"> <path d="m17.341 7.904-2.6-4.334a1.025 1.025 0 0 0-.84-.43H4.1a1.025 1.025 0 0 0-.84.43L.659 7.904a1.026 1.026 0 0 0 .021 1.041l7.246 10.142a1.026 1.026 0 0 0 1.686 0l7.246-10.142a1.026 1.026 0 0 0 .021-1.041Zm-1.63 5.146-1.956-1.764a.512.512 0 0 1-.017-.72l1.974-2.286a.512.512 0 0 1 .741-.168l2.03 1.173a.513.513 0 0 1 .268.438v.142a.512.512 0 0 1-.286.45l-2.03 1.173a.513.513 0 0 1-.723-.188Zm-1.81-5.463 1.956 1.764a.512.512 0 0 0 .723.188l2.03-1.173a.513.513 0 0 0 .286-.45V8.27a.512.512 0 0 0-.268-.438L14.83 6.659a.512.512 0 0 0-.741.168l-1.974 2.286a.512.512 0 0 0 .017.72ZM4.1 8.904l1.974-2.286a.512.512 0 0 0-.017-.72L4.1 4.133V8.9Zm0 4.133 1.956 1.764a.512.512 0 0 0 .723.188l2.03-1.173a.513.513 0 0 0 .286-.45v-.142a.512.512 0 0 0-.268-.438L6.798 11.59a.512.512 0 0 0-.741.168L4.083 14.044a.512.512 0 0 0 .017.72l-.001-.001Zm8.114 2.286-1.974-2.286a.512.512 0 0 1 .017-.72l1.956-1.764v4.769Z"/> </svg>
+                        </span>
+                        <h3 class="mb-1 text-xl font-semibold text-gray-900 dark:text-white">Bonus: ROI Optimization</h3>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Access our exclusive templates and practical tools to measure, track, and maximize the return on your marketing investments.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- =================================== -->
+        <!-- "What's Inside" Section - Modern Cards -->
+        <!-- =================================== -->
+        <section id="whats-inside" class="bg-white py-16 sm:py-24 relative overflow-hidden angled-bottom">
+            <!-- Decorative container for elements -->
+            <div class="decorative-container">
+                <!-- Decorative elements -->
+                <div class="absolute right-0 top-0 -mr-20 -mt-20 w-80 h-80 bg-primary-50 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                <div class="absolute left-0 bottom-0 -ml-20 -mb-20 w-80 h-80 bg-secondary-50 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+            </div>
+            
+            <div class="container mx-auto max-w-4xl px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <span class="inline-block px-4 py-1 rounded-full bg-secondary-100 text-secondary-800 text-sm font-medium mb-4">INSIDE THE GUIDE</span>
+                    <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        What You'll Discover Inside
+                    </h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
+                        This free guide breaks down everything you need to know about growing your business sustainably in 2023.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Chapter Card 1 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 hover-card-rise border border-gray-100">
+                        <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Sustainable Strategies</h3>
+                        <p class="text-gray-600">Learn eco-friendly growth tactics that reduce your carbon footprint while increasing your market reach and customer loyalty.</p>
+                        <div class="mt-4 flex items-center text-primary-600 font-medium">
+                            <span class="text-sm">Chapter 1</span>
+                            <span class="ml-2 text-xs bg-primary-100 text-primary-800 px-2 py-0.5 rounded-full">Fundamental</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Chapter Card 2 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 hover-card-rise border border-gray-100">
+                        <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Green Marketing</h3>
+                        <p class="text-gray-600">Master the art of authentic green marketing that resonates with eco-conscious consumers and builds a loyal community.</p>
+                        <div class="mt-4 flex items-center text-secondary-600 font-medium">
+                            <span class="text-sm">Chapter 2</span>
+                            <span class="ml-2 text-xs bg-secondary-100 text-secondary-800 px-2 py-0.5 rounded-full">Strategic</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Chapter Card 3 -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 hover-card-rise border border-gray-100">
+                        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Certifications & Trust</h3>
+                        <p class="text-gray-600">Learn which eco-certifications matter most to consumers and how to effectively showcase your sustainability credentials.</p>
+                        <div class="mt-4 flex items-center text-amber-600 font-medium">
+                            <span class="text-sm">Bonus Section</span>
+                            <span class="ml-2 text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Credibility</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Success indicator -->
+                <div class="mt-16 max-w-xl mx-auto text-center">
+                    <div class="flex items-center justify-center space-x-2 text-gray-500 text-sm mb-2">
+                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Planet-friendly</span>
+                        <span class="mx-2">•</span>
+                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Profit-boosting</span>
+                        <span class="mx-2">•</span>
+                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Customer-attracting</span>
+                    </div>
+                    <div class="flex justify-center">
+                        <a href="#lead-gen-form-section" class="inline-flex items-center text-primary-600 font-medium hover:text-primary-800 transition-colors">
+                            Get your copy now
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================== -->
+        <!-- Modern Testimonials Section -->
+        <!-- =================================== -->
+        <section id="testimonials" class="bg-gradient-to-br from-gray-900 to-primary-900 py-16 sm:py-20 overflow-hidden relative angled-top angled-bottom">
+            <!-- Decorative container for elements -->
+            <div class="decorative-container">
+                <!-- Background glow effects -->
+                <div class="absolute -top-40 -right-40 w-80 h-80 bg-secondary-500 rounded-full opacity-10 blur-3xl"></div>
+                <div class="absolute top-40 -left-20 w-60 h-60 bg-primary-500 rounded-full opacity-10 blur-3xl"></div>
+            </div>
+            
+            <div class="container mx-auto px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-12">
+                    <span class="inline-block px-4 py-1 rounded-full bg-gray-800 text-primary-400 text-sm font-medium mb-4">TESTIMONIALS</span>
+                    <h2 class="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">Eco-Conscious Businesses Love Our Guide</h2>
+                    <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Don't just take our word for it. Here's what sustainable brands are saying after downloading this guide.</p>
+                </div>
+            </div>
+            
+            <div class="relative overflow-hidden w-full">
+                <div class="animate-marquee">
+                    <!-- Group 1 (Needs to be duplicated exactly for smooth loop) -->
+                    <div class="marquee-group">
+                        <!-- Modern Testimonial Card 1 -->
+                        <figure class="testimonial-card w-80 sm:w-96 flex-shrink-0 rounded-xl bg-white/5 backdrop-blur-sm p-6 border border-white/10 shadow-xl">
+                            <!-- Rating stars -->
+                            <div class="flex mb-4">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            </div>
+                            <blockquote class="text-gray-300">"This guide completely transformed our approach to sustainable marketing. We implemented the certification strategy and saw a 42% increase in customer trust and conversions!"</blockquote>
+                            <figcaption class="mt-6 flex items-center gap-x-4">
+                                <img class="h-10 w-10 rounded-full ring-2 ring-primary-400 bg-gray-800" src="https://via.placeholder.com/40x40/1e293b/e2e8f0?text=JS" alt="">
+                                <div>
+                                    <div class="font-semibold text-white">Jessica Smith</div>
+                                    <div class="text-sm text-gray-400">Founder, EcoBloom Products</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                        
+                        <!-- Modern Testimonial Card 2 -->
+                        <figure class="testimonial-card w-80 sm:w-96 flex-shrink-0 rounded-xl bg-white/5 backdrop-blur-sm p-6 border border-white/10 shadow-xl">
+                            <!-- Rating stars -->
+                            <div class="flex mb-4">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            </div>
+                            <blockquote class="text-gray-300">"I've spent thousands on sustainability consultants, but this free guide actually delivered more practical value! My customers are responding to our green marketing efforts with real loyalty and advocacy."</blockquote>
+                            <figcaption class="mt-6 flex items-center gap-x-4">
+                                <img class="h-10 w-10 rounded-full ring-2 ring-primary-400 bg-gray-800" src="https://via.placeholder.com/40x40/1e293b/e2e8f0?text=DT" alt="">
+                                <div>
+                                    <div class="font-semibold text-white">David Thompson</div>
+                                    <div class="text-sm text-gray-400">CEO, Eco Living Co.</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                        
+                        <!-- Modern Testimonial Card 3 -->
+                        <figure class="testimonial-card w-80 sm:w-96 flex-shrink-0 rounded-xl bg-white/5 backdrop-blur-sm p-6 border border-white/10 shadow-xl">
+                            <!-- Rating stars -->
+                            <div class="flex mb-4">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            </div>
+                            <blockquote class="text-gray-300">"The eco-certification section alone was worth 10x the (free!) price. We applied for B Corp certification based on the guide's recommendation and it's transformed our business positioning in the market."</blockquote>
+                            <figcaption class="mt-6 flex items-center gap-x-4">
+                                <img class="h-10 w-10 rounded-full ring-2 ring-primary-400 bg-gray-800" src="https://via.placeholder.com/40x40/1e293b/e2e8f0?text=ML" alt="">
+                                <div>
+                                    <div class="font-semibold text-white">Michelle Lee</div>
+                                    <div class="text-sm text-gray-400">Director, Green Path Consulting</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    
+                    <!-- Group 2 (Exact Duplicate of Group 1) -->
+                    <div class="marquee-group" aria-hidden="true">
+                        <!-- Duplicate of the cards above -->
+                        <!-- Modern Testimonial Card 1 (Duplicate) -->
+                        <figure class="testimonial-card w-80 sm:w-96 flex-shrink-0 rounded-xl bg-white/5 backdrop-blur-sm p-6 border border-white/10 shadow-xl">
+                            <!-- Rating stars -->
+                            <div class="flex mb-4">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            </div>
+                            <blockquote class="text-gray-300">"This guide completely transformed our approach to sustainable marketing. We implemented the certification strategy and saw a 42% increase in customer trust and conversions!"</blockquote>
+                            <figcaption class="mt-6 flex items-center gap-x-4">
+                                <img class="h-10 w-10 rounded-full ring-2 ring-primary-400 bg-gray-800" src="https://via.placeholder.com/40x40/1e293b/e2e8f0?text=JS" alt="">
+                                <div>
+                                    <div class="font-semibold text-white">Jessica Smith</div>
+                                    <div class="text-sm text-gray-400">Founder, EcoBloom Products</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                        
+                        <!-- Add duplicates of other cards -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Link -->
+            <div class="text-center mt-12">
+                <a href="#lead-gen-form-section" class="inline-flex items-center px-6 py-3 rounded-full text-white bg-primary-700 hover:bg-primary-600 transition-colors duration-300 font-medium text-sm">
+                    Join them today 
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- =================================== -->
+        <!-- FAQ Section - Modern Layout -->
+        <!-- =================================== -->
+        <section id="faq" class="bg-gradient-to-br from-secondary-50 via-white to-primary-50 py-16 sm:py-24 relative angled-top">
+          <!-- Decorative container for elements -->
+          <div class="decorative-container">
+            <!-- Decorative elements -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 -ml-16 w-32 h-32 bg-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+            <div class="absolute top-1/4 right-0 -mr-16 w-32 h-32 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+          </div>
+          
+          <div class="container mx-auto max-w-4xl px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+              <span class="inline-block px-4 py-1 rounded-full bg-secondary-100 text-secondary-800 text-sm font-medium mb-4">FAQ</span>
+              <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">Got Questions? We Have Answers</h2>
+              <p class="text-lg text-gray-600 max-w-2xl mx-auto">Everything you need to know before getting your free guide.</p>
+            </div>
+            
+            <div class="space-y-5">
+              <!-- FAQ Item 1 -->
+              <div class="rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="flex w-full items-center justify-between rounded-2xl px-6 py-5 text-left" onclick="this.parentNode.classList.toggle('active')">
+                  <span class="flex items-center">
+                    <span class="text-lg font-semibold text-gray-900">Is this sustainability guide *really* free?</span>
+                  </span>
+                  <svg class="h-6 w-6 text-primary-600 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="px-6 pb-5 hidden">
+                  <p class="text-base text-gray-600">Absolutely! Just provide your email, and we'll send it instantly. You'll also get our weekly sustainable business tips newsletter (unsubscribe anytime).</p>
+                </div>
+              </div>
+              
+              <!-- FAQ Item 2 -->
+              <div class="rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="flex w-full items-center justify-between rounded-2xl px-6 py-5 text-left" onclick="this.parentNode.classList.toggle('active')">
+                  <span class="flex items-center">
+                    <span class="text-lg font-semibold text-gray-900">Who is this guide best suited for?</span>
+                  </span>
+                  <svg class="h-6 w-6 text-primary-600 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="px-6 pb-5 hidden">
+                  <p class="text-base text-gray-600">This is perfect for eco-conscious business owners, sustainable entrepreneurs, and green marketing managers who want to build a business that's good for the planet and profitable.</p>
+                </div>
+              </div>
+              
+              <!-- FAQ Item 3 -->
+              <div class="rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="flex w-full items-center justify-between rounded-2xl px-6 py-5 text-left" onclick="this.parentNode.classList.toggle('active')">
+                  <span class="flex items-center">
+                    <span class="text-lg font-semibold text-gray-900">Is this updated for current sustainability trends?</span>
+                  </span>
+                  <svg class="h-6 w-6 text-primary-600 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="px-6 pb-5 hidden">
+                  <p class="text-base text-gray-600">Yes! We update the guide quarterly to reflect the latest sustainability trends and consumer preferences. The current version (July 2023) includes updates on carbon footprint tracking, circular economy models, and green marketing regulations.</p>
+                </div>
+              </div>
+              
+              <!-- FAQ Item 4 -->
+              <div class="rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="flex w-full items-center justify-between rounded-2xl px-6 py-5 text-left" onclick="this.parentNode.classList.toggle('active')">
+                  <span class="flex items-center">
+                    <span class="text-lg font-semibold text-gray-900">What format is the playbook?</span>
+                  </span>
+                  <svg class="h-6 w-6 text-primary-600 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="px-6 pb-5 hidden">
+                  <p class="text-base text-gray-600">It's a beautifully designed 45-page PDF with actionable steps, case studies of successful eco-businesses, and a sustainability assessment tool to track your progress.</p>
+                </div>
+              </div>
+              
+              <!-- Additional FAQ Items -->
+              <div class="rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="flex w-full items-center justify-between rounded-2xl px-6 py-5 text-left" onclick="this.parentNode.classList.toggle('active')">
+                  <span class="flex items-center">
+                    <span class="text-lg font-semibold text-gray-900">Can I share this guide?</span>
+                  </span>
+                  <svg class="h-6 w-6 text-primary-600 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="px-6 pb-5 hidden">
+                  <p class="text-base text-gray-600">We'd love for you to share the link to this landing page so others can sign up and get their own copy! Spreading sustainable business practices helps us all.</p>
+                </div>
+              </div>
+              
+              <div class="rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="flex w-full items-center justify-between rounded-2xl px-6 py-5 text-left" onclick="this.parentNode.classList.toggle('active')">
+                  <span class="flex items-center">
+                    <span class="text-lg font-semibold text-gray-900">What if I have more questions?</span>
+                  </span>
+                  <svg class="h-6 w-6 text-primary-600 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="px-6 pb-5 hidden">
+                  <p class="text-base text-gray-600">Feel free to reach out to us at support@greengrowth.com! We're happy to help with any sustainability questions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================== -->
+        <!-- Final Call to Action Section -->
+        <!-- =================================== -->
+        <section id="final-cta" class="bg-gray-900 py-16 sm:py-20">
+          <div class="container mx-auto max-w-4xl px-6 lg:px-8 text-center">
+             <div class="mx-auto max-w-2xl">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                  Ready to Transform Your Business Sustainably?
+                </h2>
+                <p class="mt-4 text-lg leading-8 text-gray-300">
+                  Stop putting off your eco-transformation. Download your free guide now and start making a positive impact while growing your profits.
+                </p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                   <a href="#lead-gen-form-section" class="rounded-md bg-gradient-to-r from-secondary-500 to-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 transform hover:scale-105 transition duration-300 ease-in-out">
+                    Get My FREE Green Growth Guide!
+                  </a>
+                </div>
+             </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-primary-600 to-secondary-500 text-white animated-gradient relative overflow-hidden">
+            <!-- Decorative container for elements -->
+            <div class="decorative-container">
+                <div class="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+                <div class="absolute top-0 right-0 w-96 h-96 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+                <div class="absolute -bottom-32 left-20 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+            </div>
+            
+            <div class="container mx-auto max-w-7xl px-6 lg:px-8 text-center relative z-10">
+                <div class="absolute inset-0 overflow-hidden opacity-20">
+                    <div class="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+                    <div class="absolute -bottom-32 left-20 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+                </div>
+                
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6">Ready to Grow Your Business Sustainably?</h2>
+                <p class="max-w-2xl mx-auto text-lg mb-8">Join over 15,000 eco-conscious entrepreneurs already using our Green Growth Playbook to build businesses that are both profitable and planet-friendly.</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+                    <a href="#lead-gen-form-section" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm bg-white text-primary-700 hover:bg-gray-100 transition-colors duration-300">
+                        Get Your Free Playbook
+                    </a>
+                    <a href="#testimonials" class="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-primary-700 transition-colors duration-300">
+                        See Success Stories
+                    </a>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-10 text-left">
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 p-1 bg-primary-500 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span>Instant access to our eco-certification guide</span>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 p-1 bg-primary-500 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span>Free sustainability assessment toolkit</span>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 p-1 bg-primary-500 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span>Weekly green business trends in your inbox</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =================================== -->
+    <!-- Footer -->
+    <!-- =================================== -->
+    <footer class="bg-primary-600 text-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Company Info -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">GreenGrowth</h3>
+            <p class="text-primary-200 mb-4">Helping eco-conscious businesses grow sustainably and profitably since 2019.</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.168l2.03 1.173a.513.513 0 01.268.438v.142a.512.512 0 01-.286.45l-2.03 1.173a.513.513 0 01-.723-.188Zm-1.81-5.463 1.956 1.764a.512.512 0 0 0 .723.188l2.03-1.173a.513.513 0 0 0 .286-.45V8.27a.512.512 0 0 0-.268-.438L14.83 6.659a.512.512 0 0 0-.741.168l-1.974 2.286a.512.512 0 0 0 .017.72ZM4.1 8.904l1.974-2.286a.512.512 0 0 0-.017-.72L4.1 4.133V8.9Zm0 4.133 1.956 1.764a.512.512 0 0 0 .723.188l2.03-1.173a.513.513 0 0 0 .286-.45v-.142a.512.512 0 0 0-.268-.438L6.798 11.59a.512.512 0 0 0-.741.168L4.083 14.044a.512.512 0 0 0 .017.72l-.001-.001Zm8.114 2.286-1.974-2.286a.512.512 0 0 1 .017-.72l1.956-1.764v4.769Z"/> </svg>
+              </a>
+              <a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Resources</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">Free Sustainability Audit</a></li>
+              <li><a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">Green Marketing Guide</a></li>
+              <li><a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">Carbon Calculator</a></li>
+              <li><a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">Case Studies</a></li>
+              <li><a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">Eco-Business Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact/Legal -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact & Legal</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">hello@greengrowth.com</a></li>
+              <li><a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+              <li><a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">Terms of Service</a></li>
+              <li><a href="#" class="text-primary-200 hover:text-white transition-colors duration-300">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-10 pt-8 border-t border-primary-500 text-primary-200 text-sm text-center">
+          <p>© 2023 GreenGrowth Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+</body>
+<script>
+  // FAQ Toggle Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize FAQ items
+    const faqItems = document.querySelectorAll('.rounded-2xl button');
+    
+    faqItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const icon = this.querySelector('svg');
+        
+        // Toggle content visibility
+        if (content.classList.contains('hidden')) {
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+        } else {
+          content.classList.add('hidden');
+          icon.classList.remove('rotate-180');
+        }
+      });
+    });
+  });
+</script>
+</html>
